@@ -1,0 +1,10 @@
+C:\Users\zachh\OneDrive\KSUCoursework\CIS560\ProjectFiles\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\bin\Debug\ITCheckoutUI.exe.config
+C:\Users\zachh\OneDrive\KSUCoursework\CIS560\ProjectFiles\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\bin\Debug\ITCheckoutUI.exe
+C:\Users\zachh\OneDrive\KSUCoursework\CIS560\ProjectFiles\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\bin\Debug\ITCheckoutUI.pdb
+C:\Users\zachh\OneDrive\KSUCoursework\CIS560\ProjectFiles\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.csprojAssemblyReference.cache
+C:\Users\zachh\OneDrive\KSUCoursework\CIS560\ProjectFiles\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.Form1.resources
+C:\Users\zachh\OneDrive\KSUCoursework\CIS560\ProjectFiles\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.Properties.Resources.resources
+C:\Users\zachh\OneDrive\KSUCoursework\CIS560\ProjectFiles\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.csproj.GenerateResource.cache
+C:\Users\zachh\OneDrive\KSUCoursework\CIS560\ProjectFiles\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.csproj.CoreCompileInputs.cache
+C:\Users\zachh\OneDrive\KSUCoursework\CIS560\ProjectFiles\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.exe
+C:\Users\zachh\OneDrive\KSUCoursework\CIS560\ProjectFiles\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.pdb
