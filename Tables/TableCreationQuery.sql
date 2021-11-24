@@ -1,21 +1,9 @@
 /****************************
+ * TableCreationQuery.sql
  * Final Project CIS 560
  * Author: Tyler Harder, Zach Hazen, Eric Kyle
  * Setup Script for Table Creation
  ****************************/
-
- --Create Schema
-DROP SCHEMA IF EXISTS [IT];
-GO
-CREATE SCHEMA [IT];
-GO
-
---Create Tables
-DROP TABLE IF EXISTS IT.[Returns];
-DROP TABLE IF EXISTS IT.CheckOuts;
-DROP TABLE IF EXISTS IT.Customers;
-DROP TABLE IF EXISTS IT.Employees;
-DROP TABLE IF EXISTS IT.Inventory;
 
 CREATE TABLE IT.Inventory
 (
@@ -23,7 +11,8 @@ CREATE TABLE IT.Inventory
 	ItemName NVARCHAR(32) NOT NULL,
 	SerialNumber NVARCHAR(32) NOT NULL,
 	ItemType NVARCHAR (15) NOT NULL,
-	IsCheckedOut BIT NOT NULL
+	IsCheckedOut BIT NOT NULL,
+	IsRemoved BIT NOT NULL
 
 	CONSTRAINT [UK_ItemName_SerialNumber] UNIQUE
 	(
