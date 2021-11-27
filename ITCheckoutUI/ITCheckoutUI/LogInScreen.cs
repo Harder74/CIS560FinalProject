@@ -11,17 +11,15 @@ using System.Data.SqlClient;
 
 namespace ITCheckoutUI
 {
-    public partial class Form1 : Form
+    public partial class LogInScreen : Form
     {
-        public Form1()
+        public LogInScreen()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
             SqlConnection connection = new SqlConnection("Server=(localdb)\\MSSQLLocalDb;Database=testing");
             
 
@@ -32,8 +30,18 @@ namespace ITCheckoutUI
             connection.Open();
 
             string result = command.ExecuteScalar().ToString();
+        }
 
-            testOutput.Text = result;
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text.Equals("admin") && txtPassword.Text.Equals("password"))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("The username/password combination you have entered is incorrect.");
+            }
         }
     }
 }

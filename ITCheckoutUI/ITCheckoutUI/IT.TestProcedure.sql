@@ -1,6 +1,0 @@
-CREATE PROCEDURE IT.TestProcedure
-AS
-
-SELECT I.ItemName
-FROM IT.Inventory I
-GO
