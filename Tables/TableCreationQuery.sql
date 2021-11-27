@@ -4,7 +4,13 @@
  * Author: Tyler Harder, Zach Hazen, Eric Kyle
  * Setup Script for Table Creation
  ****************************/
-
+IF NOT EXISTS
+ (
+	SELECT *
+	FROM sys.tables s
+	WHERE s.[name] = N'Inventory'
+ )
+BEGIN
 CREATE TABLE IT.Inventory
 (
 	ItemID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
@@ -19,8 +25,16 @@ CREATE TABLE IT.Inventory
 		ItemName,
 		SerialNumber
 	)
-);
+)
+END;
 
+IF NOT EXISTS
+ (
+	SELECT *
+	FROM sys.tables s
+	WHERE s.[name] = N'Customers'
+ )
+BEGIN
 CREATE TABLE IT.Customers
 (
 	CustomerID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
@@ -32,8 +46,16 @@ CREATE TABLE IT.Customers
 		FirstName,
 		LastName
 	)
-);
+)
+END;
 
+IF NOT EXISTS
+ (
+	SELECT *
+	FROM sys.tables s
+	WHERE s.[name] = N'Employeees'
+ )
+BEGIN
 CREATE TABLE IT.Employees
 (
 	EmployeeID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
@@ -45,8 +67,16 @@ CREATE TABLE IT.Employees
 		FirstName,
 		LastName
 	)
-);
+)
+END;
 
+IF NOT EXISTS
+ (
+	SELECT *
+	FROM sys.tables s
+	WHERE s.[name] = N'CheckOuts'
+ )
+BEGIN
 CREATE TABLE IT.CheckOuts
 (
 	CheckOutID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
@@ -63,8 +93,16 @@ CREATE TABLE IT.CheckOuts
 
 	CONSTRAINT [FK_CustomerID_CheckOut] FOREIGN KEY(CustomerID)
 	REFERENCES IT.Customers(CustomerID)
-);
+)
+END;
 
+IF NOT EXISTS
+ (
+	SELECT *
+	FROM sys.tables s
+	WHERE s.[name] = N'Returns'
+ )
+BEGIN
 CREATE TABLE IT.[Returns]
 (
 	ReturnID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
@@ -85,4 +123,5 @@ CREATE TABLE IT.[Returns]
 
 	CONSTRAINT [FK_CheckedOutID_Returns] FOREIGN KEY(CheckedOutID)
 	REFERENCES IT.CheckOuts(CheckOutID)
-);
+)
+END;
