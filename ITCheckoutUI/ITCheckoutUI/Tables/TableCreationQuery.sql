@@ -53,7 +53,7 @@ IF NOT EXISTS
  (
 	SELECT *
 	FROM sys.tables s
-	WHERE s.[name] = N'Employeees'
+	WHERE s.[name] = N'Employees'
  )
 BEGIN
 CREATE TABLE IT.Employees

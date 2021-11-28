@@ -39,25 +39,21 @@ namespace ITCheckoutUI
             string first = txtFirstName.Text;
             string last = txtLastName.Text;
             
-            //alternate route for a similar error
+            //fixed with notes
+            //need CommandText line if you use the file syntax, or can call directly using sqlcommand
+            //the procedure cannot have .sql attachted 
+            //Need command type included
+            //need Identity to be included in the queriy
             
-            SqlCommand AddCustomerCmd = new SqlCommand(File.ReadAllText(@"..\..\Procedures\IT.AddCustomer.sql"), connection);
-            AddCustomerCmd.CommandText = @"ITDB.IT.AddCustomer.sql";
+            SqlCommand AddCustomerCmd = new SqlCommand(@"ITDB.IT.AddCustomer", connection);
+            //AddCustomerCmd.CommandText = @"ITDB.IT.AddCustomer";
             AddCustomerCmd.CommandType = CommandType.StoredProcedure;
             AddCustomerCmd.Parameters.AddWithValue("@FirstName", first);
             AddCustomerCmd.Parameters.AddWithValue("@LastName", last);
-            
-            AddCustomerCmd.ExecuteNonQuery();
-            
+            AddCustomerCmd.Parameters.AddWithValue("@CustomerID", 0);
 
-            /*
-            SqlCommand AddCustomerCmd = new SqlCommand(File.ReadAllText(@"..\..\Procedures\IT.AddCustomer.sql"), connection);
-            
-            AddCustomerCmd.Parameters.AddWithValue("FirstName", first);
-            AddCustomerCmd.Parameters.AddWithValue("LastName", last);
-            
             AddCustomerCmd.ExecuteNonQuery();
-            */
+            
             MessageBox.Show("Customer added successfully!");
         }
     }

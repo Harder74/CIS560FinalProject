@@ -37,11 +37,11 @@ namespace ITCheckoutUI
             properConnection.Open();
 
             schemaCreationCmd.ExecuteNonQuery();
-            /*
-            SqlCommand tableCreationCmd = new SqlCommand(File.ReadAllText(@"TableCreationQuery"), properConnection);
+            
+            SqlCommand tableCreationCmd = new SqlCommand(File.ReadAllText(@"..\..\Tables\TableCreationQuery.sql"), properConnection);
 
             tableCreationCmd.ExecuteNonQuery();
-            */
+            
         }
 
         public void ReturnToLanding(Form child)
