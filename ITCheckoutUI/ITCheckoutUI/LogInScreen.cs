@@ -19,7 +19,7 @@ namespace ITCheckoutUI
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text.Equals("admin") && txtPassword.Text.Equals("password"))
+            if (txtUsername.Text.Equals("") && txtPassword.Text.Equals(""))
             {
                 Landing landing = new Landing();
                 this.Hide();

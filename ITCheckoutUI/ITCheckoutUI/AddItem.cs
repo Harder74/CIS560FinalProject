@@ -35,25 +35,43 @@ namespace ITCheckoutUI
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string name = txtItemName.Text;
-            string serial = txtSerialNo.Text;
-            string type = txtItemType.Text;
-            int checkedOut = 0;
-            int IsRemoved = 0;
-            
-                SqlCommand AddItemCmd = new SqlCommand(@"ITDB.IT.AddItem", sqlConnection);
-                AddItemCmd.CommandType = CommandType.StoredProcedure;
-                AddItemCmd.Parameters.AddWithValue("@ItemName", name);
-                AddItemCmd.Parameters.AddWithValue("@SerialNumber", serial);
-                AddItemCmd.Parameters.AddWithValue("@ItemType", type);
-                AddItemCmd.Parameters.AddWithValue("@IsCheckedOut", checkedOut);
-                AddItemCmd.Parameters.AddWithValue("@IsRemoved", IsRemoved);
-                AddItemCmd.Parameters.AddWithValue("@ItemID", 0);
+            if (txtItemName.Text != string.Empty && txtSerialNo.Text != string.Empty && txtItemType.Text != string.Empty)
+            {
+                string name = txtItemName.Text;
+                string serial = txtSerialNo.Text;
+                string type = txtItemType.Text;
+                int checkedOut = 0;
+                int IsRemoved = 0;
+                try
+                {
+                    SqlCommand AddItemCmd = new SqlCommand(@"ITDB.IT.AddItem", sqlConnection);
+                    AddItemCmd.CommandType = CommandType.StoredProcedure;
+                    AddItemCmd.Parameters.AddWithValue("@ItemName", name);
+                    AddItemCmd.Parameters.AddWithValue("@SerialNumber", serial);
+                    AddItemCmd.Parameters.AddWithValue("@ItemType", type);
+                    AddItemCmd.Parameters.AddWithValue("@IsCheckedOut", checkedOut);
+                    AddItemCmd.Parameters.AddWithValue("@IsRemoved", IsRemoved);
+                    AddItemCmd.Parameters.AddWithValue("@ItemID", 0);
 
-                AddItemCmd.ExecuteNonQuery();
+                    AddItemCmd.ExecuteNonQuery();
 
-                MessageBox.Show("Item added successfully!");
-           
+                    MessageBox.Show("Item added successfully!");
+                    parent.ReturnToLanding(this);
+                    this.Close();
+                }
+                catch (SqlException sql)
+                {
+                    MessageBox.Show("Item already exists");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unable to add Item");
+                }
+            }
+            else
+            {
+                MessageBox.Show("All fields must be filled in to add item.");
+            }
         }
     }
 }
