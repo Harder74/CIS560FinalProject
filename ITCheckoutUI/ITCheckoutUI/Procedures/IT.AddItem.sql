@@ -5,17 +5,16 @@
  * Procedure for adding item
  ****************************/
 
- CREATE OR ALTER PROCEDURE IT.AddItem
+CREATE PROCEDURE IT.AddItem
 	@ItemName NVARCHAR(32),
 	@SerialNumber NVARCHAR(32),
 	@ItemType NVARCHAR(15),
-	@IsCheckedOut BIT,
-	@IsRemoved BIT,
+	@IsCheckedOut INT,
+	@IsRemoved INT,
 	@ItemID INT OUTPUT
 AS
 
-INSERT IT.Customers(FirstName, LastName)
+INSERT IT.Inventory(ItemName, SerialNumber, ItemType, IsCheckedOut, IsRemoved)
 VALUES(@ItemName, @SerialNumber, @ItemType, @IsCheckedOut, @IsRemoved);
 
 SET @ItemID = SCOPE_IDENTITY()
-GO

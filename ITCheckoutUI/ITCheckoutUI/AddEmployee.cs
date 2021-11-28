@@ -49,11 +49,11 @@ namespace ITCheckoutUI
 
                 MessageBox.Show("Employee added successfully!");
             }
-            catch (SqlException sql)
+            catch(SqlException sql)
             {
-                MessageBox.Show("Employee Already in Database");
+                MessageBox.Show("Employee already exists");
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
                 MessageBox.Show("Unable to add Employee");
             }

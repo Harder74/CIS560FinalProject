@@ -5,7 +5,7 @@
  * Procedure for adding employee
  ****************************/
 
- CREATE OR ALTER PROCEDURE IT.AddEmployee
+CREATE PROCEDURE IT.AddEmployee
 	@FirstName NVARCHAR(32),
 	@LastName NVARCHAR(32),
 	@EmployeeID INT OUTPUT
@@ -15,4 +15,3 @@ INSERT IT.Employees(FirstName, LastName)
 VALUES(@FirstName, @LastName);
 
 SET @EmployeeID = SCOPE_IDENTITY()
-GO

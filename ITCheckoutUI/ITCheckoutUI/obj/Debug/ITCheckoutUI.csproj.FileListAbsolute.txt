@@ -23,7 +23,6 @@ C:\Users\zachh\OneDrive\KSUCoursework\CIS560\ProjectFiles\CIS560FinalProject\ITC
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\bin\Debug\ITCheckoutUI.exe.config
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\bin\Debug\ITCheckoutUI.exe
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\bin\Debug\ITCheckoutUI.pdb
-D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.csprojAssemblyReference.cache
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.AddCustomer.resources
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.AddEmployee.resources
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.AddItem.resources
@@ -43,3 +42,4 @@ D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\I
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.exe
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.pdb
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.g.resources
+D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.csprojAssemblyReference.cache
