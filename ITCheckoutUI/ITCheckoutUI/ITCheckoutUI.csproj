@@ -174,6 +174,7 @@
     <EmbeddedResource Include="ViewInventoryItem.resx">
       <DependentUpon>ViewInventoryItem.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="bin\Debug\ITCheckoutUI.exe.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -186,6 +187,50 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\ITCheckoutUI.exe" />
+    <Content Include="bin\Debug\ITCheckoutUI.pdb" />
+    <Content Include="DB-Schema\DatabaseCreation.sql" />
+    <Content Include="DB-Schema\SchemaCreation.sql" />
+    <Content Include="Procedures\IT.AddCheckout.sql" />
+    <Content Include="Procedures\IT.AddCustomer.sql" />
+    <Content Include="Procedures\IT.AddEmployee.sql" />
+    <Content Include="Procedures\IT.AddItem.sql" />
+    <Content Include="Procedures\IT.AddReturn.sql" />
+    <Content Include="Procedures\IT.GetAvailableItems.sql" />
+    <Content Include="Procedures\IT.GetCCheckedOutOn.sql" />
+    <Content Include="Procedures\IT.GetCReturnedOn.sql" />
+    <Content Include="Procedures\IT.GetCustomerByFirst.sql" />
+    <Content Include="Procedures\IT.GetCustomerByID.sql" />
+    <Content Include="Procedures\IT.GetCustomerByLast.sql" />
+    <Content Include="Procedures\IT.GetCustomerByName.sql" />
+    <Content Include="Procedures\IT.GetCustomerCheckOuts.sql" />
+    <Content Include="Procedures\IT.GetCustomerReturns.sql" />
+    <Content Include="Procedures\IT.GetECheckedOutOn.sql" />
+    <Content Include="Procedures\IT.GetEmployeeByFirst.sql" />
+    <Content Include="Procedures\IT.GetEmployeeByID.sql" />
+    <Content Include="Procedures\IT.GetEmployeeByLast.sql" />
+    <Content Include="Procedures\IT.GetEmployeeByName.sql" />
+    <Content Include="Procedures\IT.GetEmployeeCheckOuts.sql" />
+    <Content Include="Procedures\IT.GetEmployeeReturns.sql" />
+    <Content Include="Procedures\IT.GetEReturnedOn.sql" />
+    <Content Include="Procedures\IT.GetItemByID.sql" />
+    <Content Include="Procedures\IT.GetItemBySerialNumber.sql" />
+    <Content Include="Procedures\IT.GetItemCheckOuts.sql" />
+    <Content Include="Procedures\IT.GetItemReturns.sql" />
+    <Content Include="Procedures\IT.GetItemsByCheckedOut.sql" />
+    <Content Include="Procedures\IT.GetItemsByItemName.sql" />
+    <Content Include="Procedures\IT.GetItemsByItemType.sql" />
+    <Content Include="Procedures\IT.GetItemsCheckedOutByCID.sql" />
+    <Content Include="Procedures\IT.GetMonthlyReport.sql" />
+    <Content Include="Procedures\IT.GetPopOfItems.sql" />
+    <Content Include="Procedures\IT.GetRemovedItems.sql" />
+    <Content Include="Tables\DropTables.sql" />
+    <Content Include="Tables\TableCreationQuery.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

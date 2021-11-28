@@ -47,69 +47,78 @@ namespace ITCheckoutUI
             // lstResults
             // 
             this.lstResults.FormattingEnabled = true;
-            this.lstResults.Location = new System.Drawing.Point(12, 168);
+            this.lstResults.ItemHeight = 16;
+            this.lstResults.Location = new System.Drawing.Point(16, 207);
+            this.lstResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstResults.Name = "lstResults";
             this.lstResults.ScrollAlwaysVisible = true;
-            this.lstResults.Size = new System.Drawing.Size(776, 225);
+            this.lstResults.Size = new System.Drawing.Size(1033, 276);
             this.lstResults.TabIndex = 9;
             // 
             // lblItemID
             // 
             this.lblItemID.AutoSize = true;
-            this.lblItemID.Location = new System.Drawing.Point(45, 43);
+            this.lblItemID.Location = new System.Drawing.Point(60, 53);
+            this.lblItemID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblItemID.Name = "lblItemID";
-            this.lblItemID.Size = new System.Drawing.Size(41, 13);
+            this.lblItemID.Size = new System.Drawing.Size(51, 17);
             this.lblItemID.TabIndex = 10;
             this.lblItemID.Text = "ItemID:";
             // 
             // lblItemName
             // 
             this.lblItemName.AutoSize = true;
-            this.lblItemName.Location = new System.Drawing.Point(25, 71);
+            this.lblItemName.Location = new System.Drawing.Point(33, 87);
+            this.lblItemName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblItemName.Name = "lblItemName";
-            this.lblItemName.Size = new System.Drawing.Size(61, 13);
+            this.lblItemName.Size = new System.Drawing.Size(79, 17);
             this.lblItemName.TabIndex = 11;
             this.lblItemName.Text = "Item Name:";
             // 
             // lblSerialNo
             // 
             this.lblSerialNo.AutoSize = true;
-            this.lblSerialNo.Location = new System.Drawing.Point(10, 99);
+            this.lblSerialNo.Location = new System.Drawing.Point(13, 122);
+            this.lblSerialNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSerialNo.Name = "lblSerialNo";
-            this.lblSerialNo.Size = new System.Drawing.Size(76, 13);
+            this.lblSerialNo.Size = new System.Drawing.Size(102, 17);
             this.lblSerialNo.TabIndex = 12;
             this.lblSerialNo.Text = "Serial Number:";
             // 
             // lblCheckedOut
             // 
             this.lblCheckedOut.AutoSize = true;
-            this.lblCheckedOut.Location = new System.Drawing.Point(13, 127);
+            this.lblCheckedOut.Location = new System.Drawing.Point(17, 156);
+            this.lblCheckedOut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCheckedOut.Name = "lblCheckedOut";
-            this.lblCheckedOut.Size = new System.Drawing.Size(73, 13);
+            this.lblCheckedOut.Size = new System.Drawing.Size(94, 17);
             this.lblCheckedOut.TabIndex = 13;
             this.lblCheckedOut.Text = "Checked Out:";
             // 
             // menuStrip
             // 
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuHome});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1067, 28);
             this.menuStrip.TabIndex = 14;
             this.menuStrip.Text = "menuStrip1";
             // 
             // menuHome
             // 
             this.menuHome.Name = "menuHome";
-            this.menuHome.Size = new System.Drawing.Size(52, 20);
+            this.menuHome.Size = new System.Drawing.Size(64, 24);
             this.menuHome.Text = "Home";
+            this.menuHome.Click += new System.EventHandler(this.menuHome_Click);
             // 
             // btnRemove
             // 
-            this.btnRemove.Location = new System.Drawing.Point(680, 38);
+            this.btnRemove.Location = new System.Drawing.Point(907, 47);
+            this.btnRemove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(108, 23);
+            this.btnRemove.Size = new System.Drawing.Size(144, 28);
             this.btnRemove.TabIndex = 15;
             this.btnRemove.Text = "Remove Item";
             this.btnRemove.UseVisualStyleBackColor = true;
@@ -117,40 +126,44 @@ namespace ITCheckoutUI
             // lblOutputItemID
             // 
             this.lblOutputItemID.AutoSize = true;
-            this.lblOutputItemID.Location = new System.Drawing.Point(92, 43);
+            this.lblOutputItemID.Location = new System.Drawing.Point(123, 53);
+            this.lblOutputItemID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOutputItemID.Name = "lblOutputItemID";
-            this.lblOutputItemID.Size = new System.Drawing.Size(0, 13);
+            this.lblOutputItemID.Size = new System.Drawing.Size(0, 17);
             this.lblOutputItemID.TabIndex = 16;
             // 
             // lblOutputItemName
             // 
             this.lblOutputItemName.AutoSize = true;
-            this.lblOutputItemName.Location = new System.Drawing.Point(92, 71);
+            this.lblOutputItemName.Location = new System.Drawing.Point(123, 87);
+            this.lblOutputItemName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOutputItemName.Name = "lblOutputItemName";
-            this.lblOutputItemName.Size = new System.Drawing.Size(0, 13);
+            this.lblOutputItemName.Size = new System.Drawing.Size(0, 17);
             this.lblOutputItemName.TabIndex = 17;
             // 
             // lblOutputSerialNo
             // 
             this.lblOutputSerialNo.AutoSize = true;
-            this.lblOutputSerialNo.Location = new System.Drawing.Point(92, 99);
+            this.lblOutputSerialNo.Location = new System.Drawing.Point(123, 122);
+            this.lblOutputSerialNo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOutputSerialNo.Name = "lblOutputSerialNo";
-            this.lblOutputSerialNo.Size = new System.Drawing.Size(0, 13);
+            this.lblOutputSerialNo.Size = new System.Drawing.Size(0, 17);
             this.lblOutputSerialNo.TabIndex = 18;
             // 
             // lblOutputCheckedOut
             // 
             this.lblOutputCheckedOut.AutoSize = true;
-            this.lblOutputCheckedOut.Location = new System.Drawing.Point(92, 127);
+            this.lblOutputCheckedOut.Location = new System.Drawing.Point(123, 156);
+            this.lblOutputCheckedOut.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblOutputCheckedOut.Name = "lblOutputCheckedOut";
-            this.lblOutputCheckedOut.Size = new System.Drawing.Size(0, 13);
+            this.lblOutputCheckedOut.Size = new System.Drawing.Size(0, 17);
             this.lblOutputCheckedOut.TabIndex = 19;
             // 
             // ViewInventoryItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 413);
+            this.ClientSize = new System.Drawing.Size(1067, 508);
             this.Controls.Add(this.lblOutputCheckedOut);
             this.Controls.Add(this.lblOutputSerialNo);
             this.Controls.Add(this.lblOutputItemName);
@@ -162,8 +175,10 @@ namespace ITCheckoutUI
             this.Controls.Add(this.lblItemName);
             this.Controls.Add(this.lblItemID);
             this.Controls.Add(this.lstResults);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ViewInventoryItem";
-            this.Text = "ViewInventoryItem";
+            this.Text = "View Inventory Item";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ViewInventoryItem_FormClosed);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
             this.ResumeLayout(false);

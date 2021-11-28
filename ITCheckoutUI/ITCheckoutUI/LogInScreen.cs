@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
 
 namespace ITCheckoutUI
 {
@@ -18,25 +17,13 @@ namespace ITCheckoutUI
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            SqlConnection connection = new SqlConnection("Server=(localdb)\\MSSQLLocalDb;Database=testing");
-            
-
-            SqlCommand command = new SqlCommand("IT.TestProcedure", connection);
-
-            command.CommandType = CommandType.StoredProcedure;
-
-            connection.Open();
-
-            string result = command.ExecuteScalar().ToString();
-        }
-
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if (txtUsername.Text.Equals("admin") && txtPassword.Text.Equals("password"))
             {
-
+                Landing landing = new Landing();
+                this.Hide();
+                landing.Show();
             }
             else
             {

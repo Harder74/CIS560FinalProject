@@ -49,9 +49,10 @@ namespace ITCheckoutUI
             // 
             // pnlSearchConditions
             // 
-            this.pnlSearchConditions.Location = new System.Drawing.Point(224, 60);
+            this.pnlSearchConditions.Location = new System.Drawing.Point(299, 74);
+            this.pnlSearchConditions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSearchConditions.Name = "pnlSearchConditions";
-            this.pnlSearchConditions.Size = new System.Drawing.Size(564, 119);
+            this.pnlSearchConditions.Size = new System.Drawing.Size(752, 146);
             this.pnlSearchConditions.TabIndex = 10;
             // 
             // pnlSearchChoices
@@ -61,17 +62,19 @@ namespace ITCheckoutUI
             this.pnlSearchChoices.Controls.Add(this.radSearchSerialNumber);
             this.pnlSearchChoices.Controls.Add(this.radSearchItemName);
             this.pnlSearchChoices.Controls.Add(this.radSearchID);
-            this.pnlSearchChoices.Location = new System.Drawing.Point(12, 60);
+            this.pnlSearchChoices.Location = new System.Drawing.Point(16, 74);
+            this.pnlSearchChoices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlSearchChoices.Name = "pnlSearchChoices";
-            this.pnlSearchChoices.Size = new System.Drawing.Size(206, 119);
+            this.pnlSearchChoices.Size = new System.Drawing.Size(275, 146);
             this.pnlSearchChoices.TabIndex = 9;
             // 
             // radSearchCustomerID
             // 
             this.radSearchCustomerID.AutoSize = true;
-            this.radSearchCustomerID.Location = new System.Drawing.Point(3, 95);
+            this.radSearchCustomerID.Location = new System.Drawing.Point(4, 117);
+            this.radSearchCustomerID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radSearchCustomerID.Name = "radSearchCustomerID";
-            this.radSearchCustomerID.Size = new System.Drawing.Size(202, 17);
+            this.radSearchCustomerID.Size = new System.Drawing.Size(263, 21);
             this.radSearchCustomerID.TabIndex = 6;
             this.radSearchCustomerID.TabStop = true;
             this.radSearchCustomerID.Text = "Search by Customer ID Checking Out";
@@ -80,9 +83,10 @@ namespace ITCheckoutUI
             // radSearchItemType
             // 
             this.radSearchItemType.AutoSize = true;
-            this.radSearchItemType.Location = new System.Drawing.Point(3, 72);
+            this.radSearchItemType.Location = new System.Drawing.Point(4, 89);
+            this.radSearchItemType.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radSearchItemType.Name = "radSearchItemType";
-            this.radSearchItemType.Size = new System.Drawing.Size(134, 17);
+            this.radSearchItemType.Size = new System.Drawing.Size(174, 21);
             this.radSearchItemType.TabIndex = 5;
             this.radSearchItemType.TabStop = true;
             this.radSearchItemType.Text = "Search by Return Date";
@@ -91,9 +95,10 @@ namespace ITCheckoutUI
             // radSearchSerialNumber
             // 
             this.radSearchSerialNumber.AutoSize = true;
-            this.radSearchSerialNumber.Location = new System.Drawing.Point(3, 49);
+            this.radSearchSerialNumber.Location = new System.Drawing.Point(4, 60);
+            this.radSearchSerialNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radSearchSerialNumber.Name = "radSearchSerialNumber";
-            this.radSearchSerialNumber.Size = new System.Drawing.Size(148, 17);
+            this.radSearchSerialNumber.Size = new System.Drawing.Size(190, 21);
             this.radSearchSerialNumber.TabIndex = 4;
             this.radSearchSerialNumber.TabStop = true;
             this.radSearchSerialNumber.Text = "Search by Checkout Date";
@@ -102,9 +107,10 @@ namespace ITCheckoutUI
             // radSearchItemName
             // 
             this.radSearchItemName.AutoSize = true;
-            this.radSearchItemName.Location = new System.Drawing.Point(3, 26);
+            this.radSearchItemName.Location = new System.Drawing.Point(4, 32);
+            this.radSearchItemName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radSearchItemName.Name = "radSearchItemName";
-            this.radSearchItemName.Size = new System.Drawing.Size(127, 17);
+            this.radSearchItemName.Size = new System.Drawing.Size(164, 21);
             this.radSearchItemName.TabIndex = 3;
             this.radSearchItemName.TabStop = true;
             this.radSearchItemName.Text = "Search by Item Name";
@@ -113,9 +119,10 @@ namespace ITCheckoutUI
             // radSearchID
             // 
             this.radSearchID.AutoSize = true;
-            this.radSearchID.Location = new System.Drawing.Point(3, 3);
+            this.radSearchID.Location = new System.Drawing.Point(4, 4);
+            this.radSearchID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.radSearchID.Name = "radSearchID";
-            this.radSearchID.Size = new System.Drawing.Size(87, 17);
+            this.radSearchID.Size = new System.Drawing.Size(110, 21);
             this.radSearchID.TabIndex = 2;
             this.radSearchID.TabStop = true;
             this.radSearchID.Text = "Search by ID";
@@ -124,69 +131,77 @@ namespace ITCheckoutUI
             // lstResults
             // 
             this.lstResults.FormattingEnabled = true;
-            this.lstResults.Location = new System.Drawing.Point(12, 185);
+            this.lstResults.ItemHeight = 16;
+            this.lstResults.Location = new System.Drawing.Point(16, 228);
+            this.lstResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lstResults.Name = "lstResults";
             this.lstResults.ScrollAlwaysVisible = true;
-            this.lstResults.Size = new System.Drawing.Size(776, 225);
+            this.lstResults.Size = new System.Drawing.Size(1033, 276);
             this.lstResults.TabIndex = 8;
             // 
             // btnShowItemPopularity
             // 
-            this.btnShowItemPopularity.Location = new System.Drawing.Point(8, 27);
+            this.btnShowItemPopularity.Location = new System.Drawing.Point(11, 33);
+            this.btnShowItemPopularity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowItemPopularity.Name = "btnShowItemPopularity";
-            this.btnShowItemPopularity.Size = new System.Drawing.Size(134, 27);
+            this.btnShowItemPopularity.Size = new System.Drawing.Size(179, 33);
             this.btnShowItemPopularity.TabIndex = 11;
             this.btnShowItemPopularity.Text = "Show Popularity of Items";
             this.btnShowItemPopularity.UseVisualStyleBackColor = true;
             // 
             // btnShowAvailableItems
             // 
-            this.btnShowAvailableItems.Location = new System.Drawing.Point(196, 27);
+            this.btnShowAvailableItems.Location = new System.Drawing.Point(261, 33);
+            this.btnShowAvailableItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowAvailableItems.Name = "btnShowAvailableItems";
-            this.btnShowAvailableItems.Size = new System.Drawing.Size(139, 27);
+            this.btnShowAvailableItems.Size = new System.Drawing.Size(185, 33);
             this.btnShowAvailableItems.TabIndex = 12;
             this.btnShowAvailableItems.Text = "Show All Available Items";
             this.btnShowAvailableItems.UseVisualStyleBackColor = true;
             // 
             // btnShowCheckedOutItems
             // 
-            this.btnShowCheckedOutItems.Location = new System.Drawing.Point(405, 27);
+            this.btnShowCheckedOutItems.Location = new System.Drawing.Point(540, 33);
+            this.btnShowCheckedOutItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowCheckedOutItems.Name = "btnShowCheckedOutItems";
-            this.btnShowCheckedOutItems.Size = new System.Drawing.Size(164, 27);
+            this.btnShowCheckedOutItems.Size = new System.Drawing.Size(219, 33);
             this.btnShowCheckedOutItems.TabIndex = 13;
             this.btnShowCheckedOutItems.Text = "Show All Checked Out Items";
             this.btnShowCheckedOutItems.UseVisualStyleBackColor = true;
             // 
             // btnShowRemovedItems
             // 
-            this.btnShowRemovedItems.Location = new System.Drawing.Point(640, 27);
+            this.btnShowRemovedItems.Location = new System.Drawing.Point(853, 33);
+            this.btnShowRemovedItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowRemovedItems.Name = "btnShowRemovedItems";
-            this.btnShowRemovedItems.Size = new System.Drawing.Size(148, 27);
+            this.btnShowRemovedItems.Size = new System.Drawing.Size(197, 33);
             this.btnShowRemovedItems.TabIndex = 15;
             this.btnShowRemovedItems.Text = "Show All Removed Items";
             this.btnShowRemovedItems.UseVisualStyleBackColor = true;
             // 
             // menuStrip
             // 
+            this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuHome});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1067, 28);
             this.menuStrip.TabIndex = 16;
             this.menuStrip.Text = "menuStrip";
             // 
             // menuHome
             // 
             this.menuHome.Name = "menuHome";
-            this.menuHome.Size = new System.Drawing.Size(52, 20);
+            this.menuHome.Size = new System.Drawing.Size(64, 24);
             this.menuHome.Text = "Home";
+            this.menuHome.Click += new System.EventHandler(this.menuHome_Click);
             // 
             // InventorySearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 426);
+            this.ClientSize = new System.Drawing.Size(1067, 524);
             this.Controls.Add(this.btnShowCheckedOutItems);
             this.Controls.Add(this.btnShowRemovedItems);
             this.Controls.Add(this.btnShowAvailableItems);
@@ -196,8 +211,10 @@ namespace ITCheckoutUI
             this.Controls.Add(this.lstResults);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "InventorySearch";
-            this.Text = "InventorySearch";
+            this.Text = "Inventory Search";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.InventorySearch_FormClosed);
             this.pnlSearchChoices.ResumeLayout(false);
             this.pnlSearchChoices.PerformLayout();
             this.menuStrip.ResumeLayout(false);

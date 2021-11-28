@@ -7,14 +7,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ITCheckoutUI
 {
     public partial class EmployeeSearch : Form
     {
-        public EmployeeSearch()
+        Landing parent;
+        SqlConnection sqlConnection;
+        public EmployeeSearch(Landing parent, SqlConnection connection)
         {
             InitializeComponent();
+            this.parent = parent;
+            sqlConnection = connection;
+        }
+
+        private void menuHome_Click(object sender, EventArgs e)
+        {
+            parent.ReturnToLanding(this);
+            this.Close();
+        }
+
+        private void EmployeeSearch_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            parent.ReturnToLanding(this);
         }
     }
 }

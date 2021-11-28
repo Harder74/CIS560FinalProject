@@ -42,90 +42,107 @@ namespace ITCheckoutUI
             // 
             // btnSearchCustomers
             // 
-            this.btnSearchCustomers.Location = new System.Drawing.Point(72, 46);
+            this.btnSearchCustomers.Location = new System.Drawing.Point(96, 57);
+            this.btnSearchCustomers.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchCustomers.Name = "btnSearchCustomers";
-            this.btnSearchCustomers.Size = new System.Drawing.Size(148, 23);
+            this.btnSearchCustomers.Size = new System.Drawing.Size(197, 28);
             this.btnSearchCustomers.TabIndex = 0;
             this.btnSearchCustomers.Text = "Search Customers";
             this.btnSearchCustomers.UseVisualStyleBackColor = true;
+            this.btnSearchCustomers.Click += new System.EventHandler(this.btnSearchCustomers_Click);
             // 
             // btnSearchEmployees
             // 
-            this.btnSearchEmployees.Location = new System.Drawing.Point(72, 84);
+            this.btnSearchEmployees.Location = new System.Drawing.Point(96, 103);
+            this.btnSearchEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchEmployees.Name = "btnSearchEmployees";
-            this.btnSearchEmployees.Size = new System.Drawing.Size(148, 23);
+            this.btnSearchEmployees.Size = new System.Drawing.Size(197, 28);
             this.btnSearchEmployees.TabIndex = 1;
             this.btnSearchEmployees.Text = "Search Employees";
             this.btnSearchEmployees.UseVisualStyleBackColor = true;
+            this.btnSearchEmployees.Click += new System.EventHandler(this.btnSearchEmployees_Click);
             // 
             // btnSearchInventoryItems
             // 
-            this.btnSearchInventoryItems.Location = new System.Drawing.Point(72, 122);
+            this.btnSearchInventoryItems.Location = new System.Drawing.Point(96, 150);
+            this.btnSearchInventoryItems.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchInventoryItems.Name = "btnSearchInventoryItems";
-            this.btnSearchInventoryItems.Size = new System.Drawing.Size(148, 23);
+            this.btnSearchInventoryItems.Size = new System.Drawing.Size(197, 28);
             this.btnSearchInventoryItems.TabIndex = 2;
             this.btnSearchInventoryItems.Text = "Search Inventory Items";
             this.btnSearchInventoryItems.UseVisualStyleBackColor = true;
+            this.btnSearchInventoryItems.Click += new System.EventHandler(this.btnSearchInventoryItems_Click);
             // 
             // btnCheckoutItem
             // 
-            this.btnCheckoutItem.Location = new System.Drawing.Point(72, 160);
+            this.btnCheckoutItem.Location = new System.Drawing.Point(96, 197);
+            this.btnCheckoutItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCheckoutItem.Name = "btnCheckoutItem";
-            this.btnCheckoutItem.Size = new System.Drawing.Size(148, 23);
+            this.btnCheckoutItem.Size = new System.Drawing.Size(197, 28);
             this.btnCheckoutItem.TabIndex = 3;
             this.btnCheckoutItem.Text = "Checkout an Item";
             this.btnCheckoutItem.UseVisualStyleBackColor = true;
+            this.btnCheckoutItem.Click += new System.EventHandler(this.btnCheckoutItem_Click);
             // 
             // btnReturnItem
             // 
-            this.btnReturnItem.Location = new System.Drawing.Point(72, 198);
+            this.btnReturnItem.Location = new System.Drawing.Point(96, 244);
+            this.btnReturnItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnReturnItem.Name = "btnReturnItem";
-            this.btnReturnItem.Size = new System.Drawing.Size(148, 23);
+            this.btnReturnItem.Size = new System.Drawing.Size(197, 28);
             this.btnReturnItem.TabIndex = 4;
             this.btnReturnItem.Text = "Return an Item";
             this.btnReturnItem.UseVisualStyleBackColor = true;
+            this.btnReturnItem.Click += new System.EventHandler(this.btnReturnItem_Click);
             // 
             // btnAddItem
             // 
-            this.btnAddItem.Location = new System.Drawing.Point(72, 234);
+            this.btnAddItem.Location = new System.Drawing.Point(96, 288);
+            this.btnAddItem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddItem.Name = "btnAddItem";
-            this.btnAddItem.Size = new System.Drawing.Size(148, 23);
+            this.btnAddItem.Size = new System.Drawing.Size(197, 28);
             this.btnAddItem.TabIndex = 5;
             this.btnAddItem.Text = "Add an Item";
             this.btnAddItem.UseVisualStyleBackColor = true;
+            this.btnAddItem.Click += new System.EventHandler(this.btnAddItem_Click);
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(72, 272);
+            this.btnAddCustomer.Location = new System.Drawing.Point(96, 335);
+            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(148, 23);
+            this.btnAddCustomer.Size = new System.Drawing.Size(197, 28);
             this.btnAddCustomer.TabIndex = 6;
             this.btnAddCustomer.Text = "Add a Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(72, 310);
+            this.btnAddEmployee.Location = new System.Drawing.Point(96, 382);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(148, 23);
+            this.btnAddEmployee.Size = new System.Drawing.Size(197, 28);
             this.btnAddEmployee.TabIndex = 7;
             this.btnAddEmployee.Text = "Add an Employee";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(97, 17);
+            this.label1.Location = new System.Drawing.Point(129, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.Size = new System.Drawing.Size(130, 17);
             this.label1.TabIndex = 8;
             this.label1.Text = "Choose any option:";
             // 
             // Landing
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 356);
+            this.ClientSize = new System.Drawing.Size(388, 438);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnAddEmployee);
             this.Controls.Add(this.btnAddCustomer);
@@ -135,8 +152,11 @@ namespace ITCheckoutUI
             this.Controls.Add(this.btnSearchInventoryItems);
             this.Controls.Add(this.btnSearchEmployees);
             this.Controls.Add(this.btnSearchCustomers);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Landing";
             this.Text = "Landing";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Landing_FormClosed);
+            this.Load += new System.EventHandler(this.Landing_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -5,14 +5,13 @@
  * Procedure for adding customer
  ****************************/
 
- CREATE OR ALTER PROCEDURE IT.AddCustomer
+CREATE OR ALTER PROCEDURE IT.AddCustomer
 	@FirstName NVARCHAR(32),
 	@LastName NVARCHAR(32),
 	@CustomerID INT OUTPUT
 AS
 
 INSERT IT.Customers(FirstName, LastName)
-VALUES(@FirstName, @LastName);
+VALUES(@FirstName, @LastName)
 
 SET @CustomerID = SCOPE_IDENTITY()
-GO
