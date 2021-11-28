@@ -38,23 +38,33 @@ namespace ITCheckoutUI
         {
             string first = txtFirstName.Text;
             string last = txtLastName.Text;
-            
+
             //fixed with notes
             //need CommandText line if you use the file syntax, or can call directly using sqlcommand
             //the procedure cannot have .sql attachted 
             //Need command type included
             //need Identity to be included in the queriy
-            
-            SqlCommand AddCustomerCmd = new SqlCommand(@"ITDB.IT.AddCustomer", connection);
-            //AddCustomerCmd.CommandText = @"ITDB.IT.AddCustomer";
-            AddCustomerCmd.CommandType = CommandType.StoredProcedure;
-            AddCustomerCmd.Parameters.AddWithValue("@FirstName", first);
-            AddCustomerCmd.Parameters.AddWithValue("@LastName", last);
-            AddCustomerCmd.Parameters.AddWithValue("@CustomerID", 0);
+            try
+            {
+                SqlCommand AddCustomerCmd = new SqlCommand(@"ITDB.IT.AddCustomer", connection);
+                //AddCustomerCmd.CommandText = @"ITDB.IT.AddCustomer";
+                AddCustomerCmd.CommandType = CommandType.StoredProcedure;
+                AddCustomerCmd.Parameters.AddWithValue("@FirstName", first);
+                AddCustomerCmd.Parameters.AddWithValue("@LastName", last);
+                AddCustomerCmd.Parameters.AddWithValue("@CustomerID", 0);
 
-            AddCustomerCmd.ExecuteNonQuery();
-            
-            MessageBox.Show("Customer added successfully!");
+                AddCustomerCmd.ExecuteNonQuery();
+
+                MessageBox.Show("Customer added successfully!");
+            }
+            catch(SqlException sql)
+            {
+                MessageBox.Show("Customer Already in Database");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to add Customer");
+            }
         }
     }
 }
