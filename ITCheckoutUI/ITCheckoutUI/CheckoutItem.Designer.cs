@@ -49,96 +49,90 @@ namespace ITCheckoutUI
             this.menuHome});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(412, 28);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip.Size = new System.Drawing.Size(309, 24);
             this.menuStrip.TabIndex = 1;
             this.menuStrip.Text = "menuStrip1";
             // 
             // menuHome
             // 
             this.menuHome.Name = "menuHome";
-            this.menuHome.Size = new System.Drawing.Size(64, 24);
+            this.menuHome.Size = new System.Drawing.Size(52, 20);
             this.menuHome.Text = "Home";
             this.menuHome.Click += new System.EventHandler(this.menuHome_Click);
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(141, 250);
-            this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSubmit.Location = new System.Drawing.Point(106, 203);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(100, 28);
+            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 13;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
+            this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
             // 
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Location = new System.Drawing.Point(108, 52);
-            this.lblInfo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblInfo.Location = new System.Drawing.Point(81, 42);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(183, 17);
+            this.lblInfo.Size = new System.Drawing.Size(139, 13);
             this.lblInfo.TabIndex = 12;
             this.lblInfo.Text = "Enter Checkout Information:";
             // 
             // lblEmployeeID
             // 
             this.lblEmployeeID.AutoSize = true;
-            this.lblEmployeeID.Location = new System.Drawing.Point(24, 203);
-            this.lblEmployeeID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmployeeID.Location = new System.Drawing.Point(18, 165);
             this.lblEmployeeID.Name = "lblEmployeeID";
-            this.lblEmployeeID.Size = new System.Drawing.Size(125, 17);
+            this.lblEmployeeID.Size = new System.Drawing.Size(95, 13);
             this.lblEmployeeID.TabIndex = 11;
             this.lblEmployeeID.Text = "Your Employee ID:";
             // 
             // lblCustomerID
             // 
             this.lblCustomerID.AutoSize = true;
-            this.lblCustomerID.Location = new System.Drawing.Point(60, 97);
-            this.lblCustomerID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCustomerID.Location = new System.Drawing.Point(45, 79);
             this.lblCustomerID.Name = "lblCustomerID";
-            this.lblCustomerID.Size = new System.Drawing.Size(89, 17);
+            this.lblCustomerID.Size = new System.Drawing.Size(68, 13);
             this.lblCustomerID.TabIndex = 10;
             this.lblCustomerID.Text = "Customer ID:";
             // 
             // txtEmployeeID
             // 
-            this.txtEmployeeID.Location = new System.Drawing.Point(159, 199);
-            this.txtEmployeeID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmployeeID.Location = new System.Drawing.Point(119, 162);
             this.txtEmployeeID.Name = "txtEmployeeID";
-            this.txtEmployeeID.Size = new System.Drawing.Size(215, 22);
+            this.txtEmployeeID.Size = new System.Drawing.Size(162, 20);
             this.txtEmployeeID.TabIndex = 9;
             // 
             // txtCustomerID
             // 
-            this.txtCustomerID.Location = new System.Drawing.Point(159, 94);
-            this.txtCustomerID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCustomerID.Location = new System.Drawing.Point(119, 76);
             this.txtCustomerID.Name = "txtCustomerID";
-            this.txtCustomerID.Size = new System.Drawing.Size(215, 22);
+            this.txtCustomerID.Size = new System.Drawing.Size(162, 20);
             this.txtCustomerID.TabIndex = 8;
             // 
             // lblItemID
             // 
             this.lblItemID.AutoSize = true;
-            this.lblItemID.Location = new System.Drawing.Point(92, 150);
-            this.lblItemID.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblItemID.Location = new System.Drawing.Point(69, 122);
             this.lblItemID.Name = "lblItemID";
-            this.lblItemID.Size = new System.Drawing.Size(55, 17);
+            this.lblItemID.Size = new System.Drawing.Size(44, 13);
             this.lblItemID.TabIndex = 14;
             this.lblItemID.Text = "Item ID:";
             // 
             // txtItemID
             // 
-            this.txtItemID.Location = new System.Drawing.Point(159, 146);
-            this.txtItemID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtItemID.Location = new System.Drawing.Point(119, 119);
             this.txtItemID.Name = "txtItemID";
-            this.txtItemID.Size = new System.Drawing.Size(215, 22);
+            this.txtItemID.Size = new System.Drawing.Size(162, 20);
             this.txtItemID.TabIndex = 15;
             // 
             // CheckoutItem
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 306);
+            this.ClientSize = new System.Drawing.Size(309, 249);
             this.Controls.Add(this.txtItemID);
             this.Controls.Add(this.lblItemID);
             this.Controls.Add(this.btnSubmit);
@@ -148,7 +142,6 @@ namespace ITCheckoutUI
             this.Controls.Add(this.txtEmployeeID);
             this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.menuStrip);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "CheckoutItem";
             this.Text = "Checkout Item";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CheckoutItem_FormClosed);

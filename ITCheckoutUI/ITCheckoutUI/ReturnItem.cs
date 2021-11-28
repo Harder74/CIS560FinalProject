@@ -32,5 +32,37 @@ namespace ITCheckoutUI
         {
             parent.ReturnToLanding(this);
         }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+            if (txtCheckoutID.Text != string.Empty && txtEmployeeID.Text != string.Empty)
+            {
+                string checkoutID = txtCheckoutID.Text;
+                string employeeID = txtEmployeeID.Text;
+                string returnID = "0";
+                try
+                {
+                    SqlCommand AddCheckoutCmd = new SqlCommand(@"ITDB.IT.AddReturn", sqlConnection);
+                    AddCheckoutCmd.CommandType = CommandType.StoredProcedure;
+                    AddCheckoutCmd.Parameters.AddWithValue("@CheckoutID", checkoutID);
+                    AddCheckoutCmd.Parameters.AddWithValue("@EmployeeID", employeeID);
+                    AddCheckoutCmd.Parameters.AddWithValue("@ReturnID", returnID);
+
+                    AddCheckoutCmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Return created successfully!");
+                    parent.ReturnToLanding(this);
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Only numeric values should be entered. Checkout ID entered must exist.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("All fields must be filled in to make a return.");
+            }
+        }
     }
 }

@@ -9,12 +9,11 @@
 	@ItemID INT,
 	@EmployeeID INT,
 	@CustomerID INT,
-	@CheckOutOn DATETIMEOFFSET,
 	@CheckoutID INT OUTPUT
 AS
 
-INSERT IT.Customers(FirstName, LastName)
-VALUES(@ItemID, @EmployeeID, @CustomerID, @CheckOutOn);
+INSERT IT.CheckOuts(ItemID, EmployeeID, CustomerID, CheckedOutOn)
+VALUES(@ItemID, @EmployeeID, @CustomerID, SYSDATETIMEOFFSET());
 
 SET @CheckoutID = SCOPE_IDENTITY()
 GO

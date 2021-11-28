@@ -9,13 +9,12 @@ CREATE OR ALTER PROCEDURE IT.AddReturn
 	@ItemID INT,
 	@EmployeeID INT,
 	@CustomerID INT,
-	@ReturnedOn DATETIMEOFFSET,
 	@CheckoutID INT ,
 	@ReturnID INT OUTPUT
 AS
 
-INSERT IT.Customers(FirstName, LastName)
-VALUES(@ItemID, @EmployeeID, @CustomerID, @ReturnedOn, @CheckoutID);
+INSERT IT.Returns(ItemID, EmployeeID, CustomerID, ReturnedOn, CheckedOutID)
+VALUES(@ItemID, @EmployeeID, @CustomerID, SYSDATETIMEOFFSET(), @CheckoutID);
 
 SET @ReturnID = SCOPE_IDENTITY()
 GO
