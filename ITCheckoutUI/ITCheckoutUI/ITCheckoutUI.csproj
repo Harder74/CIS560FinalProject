@@ -194,7 +194,7 @@
     <Content Include="DB-Schema\DatabaseCreation.sql" />
     <Content Include="DB-Schema\SchemaCreation.sql" />
     <Content Include="Procedures\IT.AddCheckout.sql" />
-    <Content Include="Procedures\IT.AddCustomer.sql" />
+    <Resource Include="Procedures\IT.AddCustomer.sql" />
     <Content Include="Procedures\IT.AddEmployee.sql" />
     <Content Include="Procedures\IT.AddItem.sql" />
     <Content Include="Procedures\IT.AddReturn.sql" />

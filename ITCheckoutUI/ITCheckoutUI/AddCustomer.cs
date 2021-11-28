@@ -38,26 +38,26 @@ namespace ITCheckoutUI
         {
             string first = txtFirstName.Text;
             string last = txtLastName.Text;
-
+            
             //alternate route for a similar error
-            /*
+            
             SqlCommand AddCustomerCmd = new SqlCommand(File.ReadAllText(@"..\..\Procedures\IT.AddCustomer.sql"), connection);
-            AddCustomerCmd.CommandText = @"IT.AddCustomer"
+            AddCustomerCmd.CommandText = @"ITDB.IT.AddCustomer.sql";
             AddCustomerCmd.CommandType = CommandType.StoredProcedure;
             AddCustomerCmd.Parameters.AddWithValue("@FirstName", first);
             AddCustomerCmd.Parameters.AddWithValue("@LastName", last);
             
             AddCustomerCmd.ExecuteNonQuery();
-            */
-
             
+
+            /*
             SqlCommand AddCustomerCmd = new SqlCommand(File.ReadAllText(@"..\..\Procedures\IT.AddCustomer.sql"), connection);
             
             AddCustomerCmd.Parameters.AddWithValue("FirstName", first);
             AddCustomerCmd.Parameters.AddWithValue("LastName", last);
             
             AddCustomerCmd.ExecuteNonQuery();
-
+            */
             MessageBox.Show("Customer added successfully!");
         }
     }
