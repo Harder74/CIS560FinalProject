@@ -99,6 +99,7 @@ namespace ITCheckoutUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            dgvResults.Rows.Clear();
             if (radSearchID.Checked)
             {
                 if (txtEmployeeID.Text != string.Empty)
@@ -136,6 +137,7 @@ namespace ITCheckoutUI
 
                             dgvResults.Rows.Add(row);
                         }
+                        reader.Close();
                     }
                     catch (Exception ex)
                     {
@@ -186,6 +188,7 @@ namespace ITCheckoutUI
 
                             dgvResults.Rows.Add(row);
                         }
+                        reader.Close();
                     }
                     catch (Exception ex)
                     {
@@ -227,6 +230,7 @@ namespace ITCheckoutUI
 
                             dgvResults.Rows.Add(row);
                         }
+                        reader.Close();
                     }
                     catch (Exception ex)
                     {
@@ -268,6 +272,7 @@ namespace ITCheckoutUI
 
                             dgvResults.Rows.Add(row);
                         }
+                        reader.Close();
                     }
                     catch (Exception ex)
                     {
@@ -314,6 +319,7 @@ namespace ITCheckoutUI
 
                         dgvResults.Rows.Add(row);
                     }
+                    reader.Close();
                 }
                 catch (Exception ex)
                 {
@@ -355,6 +361,7 @@ namespace ITCheckoutUI
 
                         dgvResults.Rows.Add(row);
                     }
+                    reader.Close();
                 }
                 catch (Exception ex)
                 {

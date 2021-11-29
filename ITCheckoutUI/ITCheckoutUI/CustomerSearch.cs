@@ -100,7 +100,8 @@ namespace ITCheckoutUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            if(radSearchID.Checked)
+            dgvResults.Rows.Clear();
+            if (radSearchID.Checked)
             {
                 if (txtCustomerID.Text != string.Empty)
                 {
@@ -137,6 +138,7 @@ namespace ITCheckoutUI
 
                             dgvResults.Rows.Add(row);
                         }
+                        reader.Close();
                     }
                     catch (Exception ex)
                     {
@@ -154,6 +156,7 @@ namespace ITCheckoutUI
                 {
                     string customerFirst = txtCustomerFirst.Text;
                     string customerLast = txtCustomerLast.Text;
+                    
                     try
                     {
                         SqlCommand SearchCustomerViaIDCmd = new SqlCommand(@"ITDB.IT.GetCustomerByName", sqlConnection);
@@ -187,6 +190,7 @@ namespace ITCheckoutUI
 
                             dgvResults.Rows.Add(row);
                         }
+                        reader.Close();
                     }
                     catch (Exception ex)
                     {
@@ -228,6 +232,7 @@ namespace ITCheckoutUI
 
                             dgvResults.Rows.Add(row);
                         }
+                        reader.Close();
                     }
                     catch (Exception ex)
                     {
@@ -269,6 +274,7 @@ namespace ITCheckoutUI
 
                             dgvResults.Rows.Add(row);
                         }
+                        reader.Close();
                     }
                     catch (Exception ex)
                     {
@@ -315,6 +321,7 @@ namespace ITCheckoutUI
 
                         dgvResults.Rows.Add(row);
                     }
+                    reader.Close();
                 }
                 catch (Exception ex)
                 {
@@ -356,6 +363,7 @@ namespace ITCheckoutUI
 
                         dgvResults.Rows.Add(row);
                     }
+                    reader.Close();
                 }
                 catch (Exception ex)
                 {
