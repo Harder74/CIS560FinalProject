@@ -35,7 +35,7 @@ namespace ITCheckoutUI
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if (txtItemName.Text != string.Empty && txtSerialNo.Text != string.Empty && txtItemType.Text != string.Empty)
+            if (txtItemName.Text != string.Empty && txtSerialNo.Text != string.Empty && txtItemType.Text != string.Empty && txtSerialNo.Text.All(char.IsDigit))
             {
                 string name = txtItemName.Text;
                 string serial = txtSerialNo.Text;
