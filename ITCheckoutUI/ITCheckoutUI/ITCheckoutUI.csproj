@@ -170,7 +170,9 @@
   <ItemGroup>
     <Content Include="bin\Debug\ITCheckoutUI.exe" />
     <Content Include="bin\Debug\ITCheckoutUI.pdb" />
+    <Content Include="DB-Schema\AllProcedures.sql" />
     <Content Include="DB-Schema\DatabaseCreation.sql" />
+    <Content Include="DB-Schema\DataCreation.sql" />
     <Content Include="DB-Schema\SchemaCreation.sql" />
     <Content Include="Procedures\IT.AddCheckout.sql" />
     <Resource Include="Procedures\IT.AddCustomer.sql" />
