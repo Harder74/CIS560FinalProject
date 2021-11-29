@@ -61,7 +61,7 @@ namespace ITCheckoutUI
                 }
                 catch (SqlException sql)
                 {
-                    MessageBox.Show("Item already exists");
+                    MessageBox.Show(sql.Message);
                 }
                 catch (Exception ex)
                 {

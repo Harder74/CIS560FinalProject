@@ -55,7 +55,7 @@ namespace ITCheckoutUI
                 }
                 catch (SqlException sql)
                 {
-                    MessageBox.Show("Employee already exists");
+                    MessageBox.Show(sql.Message);
                 }
                 catch (Exception ex)
                 {
