@@ -13,5 +13,5 @@ AS
 SELECT E.EmployeeID, E.FirstName, E.LastName
 FROM IT.Employees E
 	INNER JOIN IT.[Returns] R on R.EmployeeID = E.EmployeeID
-WHERE R.ReturnedOn = @ReturnedDate
+WHERE DATEDIFF(DAY, R.ReturnedOn, @ReturnedDate) = 0
 GROUP BY E.EmployeeID, E.FirstName, E.LastName;

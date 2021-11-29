@@ -7,9 +7,10 @@
 
 
 CREATE OR ALTER PROCEDURE IT.GetItemsByCheckedOut
-	@IsCheckedOut BIT
+	@CheckedOutOn DATETIMEOFFSET
 AS
-
-SELECT I.ItemName, I.SerialNumber, I.ItemType, I.IsCheckedOut, I.IsRemoved
+SELECT I.ItemID, I.ItemName, I.SerialNumber, I.ItemType, I.IsCheckedOut, I.IsRemoved
 FROM IT.Inventory I
-WHERE I.IsCheckedOut = @IsCheckedOut;
+	INNER JOIN IT.CheckOuts CO ON CO.ItemID = I.ItemID
+WHERE DATEDIFF(DAY, CO.CheckedOutOn, @CheckedOutDate) = 0
+GROUP BY I.ItemID, I.ItemName, I.SerialNumber, I.ItemType, I.IsCheckedOut, I.IsRemoved;

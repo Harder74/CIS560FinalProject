@@ -232,6 +232,7 @@
     <Content Include="Procedures\IT.GetMonthlyReport.sql" />
     <Content Include="Procedures\IT.GetPopOfItems.sql" />
     <Content Include="Procedures\IT.GetRemovedItems.sql" />
+    <Content Include="Procedures\IT.ItemCheckedOut.sql" />
     <Content Include="Tables\DropTables.sql" />
     <Content Include="Tables\TableCreationQuery.sql" />
   </ItemGroup>

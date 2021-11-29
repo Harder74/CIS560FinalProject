@@ -42,8 +42,7 @@ namespace ITCheckoutUI
             SqlCommand tableCreationCmd = new SqlCommand(File.ReadAllText(@"..\..\Tables\TableCreationQuery.sql"), properConnection);
 
             tableCreationCmd.ExecuteNonQuery();
-            
-            
+
 
         }
 

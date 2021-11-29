@@ -1,14 +1,15 @@
 /****************************
- * IT.ItemCheckedOut.sql
+ * IT.ItemIsRemoved.sql
  * Final Project CIS 560
  * Author: Tyler Harder, Zach Hazen, Eric Kyle
- * Procedure for adding checkout notice to item
+ * Procedure for adding Removed notice to item
  ****************************/
 
-CREATE OR ALTER PROCEDURE IT.ItemCheckedOut
+
+CREATE OR ALTER PROCEDURE IT.ItemIsRemoved
 	@ItemID INT
 AS
 
 UPDATE IT.Inventory 
-SET IsCheckedOut = 1
+SET IsRemoved = 1
 WHERE ItemID = @ItemID
