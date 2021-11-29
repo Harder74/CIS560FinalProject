@@ -34,12 +34,15 @@ namespace ITCheckoutUI
             this.radSearchCheckOutDate = new System.Windows.Forms.RadioButton();
             this.radSearchName = new System.Windows.Forms.RadioButton();
             this.radSearchID = new System.Windows.Forms.RadioButton();
-            this.lstResults = new System.Windows.Forms.ListBox();
-            this.pnlSearchConditions = new System.Windows.Forms.Panel();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.menuHome = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvResults = new System.Windows.Forms.DataGridView();
+            this.pnlSearchConditions1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pnlSearchConditions2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.pnlSearchChoices.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSearchChoices
@@ -48,78 +51,58 @@ namespace ITCheckoutUI
             this.pnlSearchChoices.Controls.Add(this.radSearchCheckOutDate);
             this.pnlSearchChoices.Controls.Add(this.radSearchName);
             this.pnlSearchChoices.Controls.Add(this.radSearchID);
-            this.pnlSearchChoices.Location = new System.Drawing.Point(13, 33);
-            this.pnlSearchChoices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlSearchChoices.Location = new System.Drawing.Point(10, 27);
             this.pnlSearchChoices.Name = "pnlSearchChoices";
-            this.pnlSearchChoices.Size = new System.Drawing.Size(204, 114);
+            this.pnlSearchChoices.Size = new System.Drawing.Size(153, 93);
             this.pnlSearchChoices.TabIndex = 3;
             // 
             // radSearchReturnDate
             // 
             this.radSearchReturnDate.AutoSize = true;
-            this.radSearchReturnDate.Location = new System.Drawing.Point(4, 89);
-            this.radSearchReturnDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radSearchReturnDate.Location = new System.Drawing.Point(3, 72);
             this.radSearchReturnDate.Name = "radSearchReturnDate";
-            this.radSearchReturnDate.Size = new System.Drawing.Size(174, 21);
+            this.radSearchReturnDate.Size = new System.Drawing.Size(134, 17);
             this.radSearchReturnDate.TabIndex = 5;
             this.radSearchReturnDate.TabStop = true;
             this.radSearchReturnDate.Text = "Search by Return Date";
             this.radSearchReturnDate.UseVisualStyleBackColor = true;
+            this.radSearchReturnDate.CheckedChanged += new System.EventHandler(this.radSearchReturnDate_CheckedChanged);
             // 
             // radSearchCheckOutDate
             // 
             this.radSearchCheckOutDate.AutoSize = true;
-            this.radSearchCheckOutDate.Location = new System.Drawing.Point(4, 60);
-            this.radSearchCheckOutDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radSearchCheckOutDate.Location = new System.Drawing.Point(3, 49);
             this.radSearchCheckOutDate.Name = "radSearchCheckOutDate";
-            this.radSearchCheckOutDate.Size = new System.Drawing.Size(190, 21);
+            this.radSearchCheckOutDate.Size = new System.Drawing.Size(148, 17);
             this.radSearchCheckOutDate.TabIndex = 4;
             this.radSearchCheckOutDate.TabStop = true;
             this.radSearchCheckOutDate.Text = "Search by Checkout Date";
             this.radSearchCheckOutDate.UseVisualStyleBackColor = true;
+            this.radSearchCheckOutDate.CheckedChanged += new System.EventHandler(this.radSearchCheckOutDate_CheckedChanged);
             // 
             // radSearchName
             // 
             this.radSearchName.AutoSize = true;
-            this.radSearchName.Location = new System.Drawing.Point(4, 32);
-            this.radSearchName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radSearchName.Location = new System.Drawing.Point(3, 26);
             this.radSearchName.Name = "radSearchName";
-            this.radSearchName.Size = new System.Drawing.Size(134, 21);
+            this.radSearchName.Size = new System.Drawing.Size(104, 17);
             this.radSearchName.TabIndex = 3;
             this.radSearchName.TabStop = true;
             this.radSearchName.Text = "Search by Name";
             this.radSearchName.UseVisualStyleBackColor = true;
+            this.radSearchName.CheckedChanged += new System.EventHandler(this.radSearchName_CheckedChanged);
             // 
             // radSearchID
             // 
             this.radSearchID.AutoSize = true;
-            this.radSearchID.Location = new System.Drawing.Point(4, 4);
-            this.radSearchID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.radSearchID.Location = new System.Drawing.Point(3, 3);
             this.radSearchID.Name = "radSearchID";
-            this.radSearchID.Size = new System.Drawing.Size(110, 21);
+            this.radSearchID.Size = new System.Drawing.Size(87, 17);
             this.radSearchID.TabIndex = 2;
             this.radSearchID.TabStop = true;
             this.radSearchID.Text = "Search by ID";
             this.radSearchID.UseVisualStyleBackColor = true;
-            // 
-            // lstResults
-            // 
-            this.lstResults.FormattingEnabled = true;
-            this.lstResults.ItemHeight = 16;
-            this.lstResults.Location = new System.Drawing.Point(13, 155);
-            this.lstResults.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.lstResults.Name = "lstResults";
-            this.lstResults.ScrollAlwaysVisible = true;
-            this.lstResults.Size = new System.Drawing.Size(1033, 276);
-            this.lstResults.TabIndex = 2;
-            // 
-            // pnlSearchConditions
-            // 
-            this.pnlSearchConditions.Location = new System.Drawing.Point(232, 33);
-            this.pnlSearchConditions.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.pnlSearchConditions.Name = "pnlSearchConditions";
-            this.pnlSearchConditions.Size = new System.Drawing.Size(816, 114);
-            this.pnlSearchConditions.TabIndex = 4;
+            this.radSearchID.CheckedChanged += new System.EventHandler(this.radSearchID_CheckedChanged);
             // 
             // menuStrip
             // 
@@ -128,28 +111,62 @@ namespace ITCheckoutUI
             this.menuHome});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Size = new System.Drawing.Size(1067, 28);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip.Size = new System.Drawing.Size(800, 24);
             this.menuStrip.TabIndex = 5;
             this.menuStrip.Text = "menuStrip";
             // 
             // menuHome
             // 
             this.menuHome.Name = "menuHome";
-            this.menuHome.Size = new System.Drawing.Size(64, 24);
+            this.menuHome.Size = new System.Drawing.Size(52, 20);
             this.menuHome.Text = "Home";
             this.menuHome.Click += new System.EventHandler(this.menuHome_Click);
             // 
+            // dgvResults
+            // 
+            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResults.Location = new System.Drawing.Point(10, 126);
+            this.dgvResults.Name = "dgvResults";
+            this.dgvResults.Size = new System.Drawing.Size(776, 231);
+            this.dgvResults.TabIndex = 6;
+            // 
+            // pnlSearchConditions1
+            // 
+            this.pnlSearchConditions1.Location = new System.Drawing.Point(170, 27);
+            this.pnlSearchConditions1.Name = "pnlSearchConditions1";
+            this.pnlSearchConditions1.Size = new System.Drawing.Size(121, 93);
+            this.pnlSearchConditions1.TabIndex = 11;
+            // 
+            // pnlSearchConditions2
+            // 
+            this.pnlSearchConditions2.Location = new System.Drawing.Point(297, 27);
+            this.pnlSearchConditions2.Name = "pnlSearchConditions2";
+            this.pnlSearchConditions2.Size = new System.Drawing.Size(244, 93);
+            this.pnlSearchConditions2.TabIndex = 12;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(635, 61);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(99, 32);
+            this.btnSearch.TabIndex = 13;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
             // EmployeeSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 454);
-            this.Controls.Add(this.pnlSearchConditions);
+            this.ClientSize = new System.Drawing.Size(800, 369);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.pnlSearchConditions2);
+            this.Controls.Add(this.pnlSearchConditions1);
+            this.Controls.Add(this.dgvResults);
             this.Controls.Add(this.pnlSearchChoices);
-            this.Controls.Add(this.lstResults);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EmployeeSearch";
             this.Text = "Employee Search";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EmployeeSearch_FormClosed);
@@ -157,6 +174,7 @@ namespace ITCheckoutUI
             this.pnlSearchChoices.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,9 +187,11 @@ namespace ITCheckoutUI
         private System.Windows.Forms.RadioButton radSearchCheckOutDate;
         private System.Windows.Forms.RadioButton radSearchName;
         private System.Windows.Forms.RadioButton radSearchID;
-        private System.Windows.Forms.ListBox lstResults;
-        private System.Windows.Forms.Panel pnlSearchConditions;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem menuHome;
+        private System.Windows.Forms.DataGridView dgvResults;
+        private System.Windows.Forms.FlowLayoutPanel pnlSearchConditions1;
+        private System.Windows.Forms.FlowLayoutPanel pnlSearchConditions2;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

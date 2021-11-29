@@ -102,23 +102,269 @@ namespace ITCheckoutUI
         {
             if(radSearchID.Checked)
             {
+                if (txtCustomerID.Text != string.Empty)
+                {
+                    string customerID = txtCustomerID.Text;
+                    try
+                    {
+                        SqlCommand SearchCustomerViaIDCmd = new SqlCommand(@"ITDB.IT.GetCustomerByID", sqlConnection);
+                        SearchCustomerViaIDCmd.CommandType = CommandType.StoredProcedure;
+                        SearchCustomerViaIDCmd.Parameters.AddWithValue("@CustomerID", customerID);
 
+                        SearchCustomerViaIDCmd.ExecuteNonQuery();
+
+                        var reader = SearchCustomerViaIDCmd.ExecuteReader();
+
+                        var customerIDOrdinal = reader.GetOrdinal("CustomerID");
+                        var firstNameOrdinal = reader.GetOrdinal("FirstName");
+                        var lastNameOrdinal = reader.GetOrdinal("LastName");
+
+                        dgvResults.ColumnCount = 3;
+
+                        dgvResults.Columns[0].Name = "Customer ID";
+                        dgvResults.Columns[1].Name = "First Name";
+                        dgvResults.Columns[2].Name = "Last Name";
+
+                        while (reader.Read())
+                        {
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells[0].Value = reader.GetInt32(customerIDOrdinal);
+                            row.Cells[1].Value = reader.GetString(firstNameOrdinal);
+                            row.Cells[2].Value = reader.GetString(lastNameOrdinal);
+
+                            dgvResults.Rows.Add(row);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to search customers with given parameters.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a customer ID");
+                }
             }
             else if (radSearchName.Checked)
             {
+                if (txtCustomerFirst.Text != string.Empty && txtCustomerLast.Text != string.Empty)
+                {
+                    string customerFirst = txtCustomerFirst.Text;
+                    string customerLast = txtCustomerLast.Text;
+                    try
+                    {
+                        SqlCommand SearchCustomerViaIDCmd = new SqlCommand(@"ITDB.IT.GetCustomerByName", sqlConnection);
+                        SearchCustomerViaIDCmd.CommandType = CommandType.StoredProcedure;
+                        SearchCustomerViaIDCmd.Parameters.AddWithValue("@FirstName", customerFirst);
+                        SearchCustomerViaIDCmd.Parameters.AddWithValue("@LastName", customerLast);
 
+                        SearchCustomerViaIDCmd.ExecuteNonQuery();
+
+                        var reader = SearchCustomerViaIDCmd.ExecuteReader();
+
+                        var customerIDOrdinal = reader.GetOrdinal("CustomerID");
+                        var firstNameOrdinal = reader.GetOrdinal("FirstName");
+                        var lastNameOrdinal = reader.GetOrdinal("LastName");
+
+                        dgvResults.ColumnCount = 3;
+
+                        dgvResults.Columns[0].Name = "Customer ID";
+                        dgvResults.Columns[1].Name = "First Name";
+                        dgvResults.Columns[2].Name = "Last Name";
+
+                        while (reader.Read())
+                        {
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells[0].Value = reader.GetInt32(customerIDOrdinal);
+                            row.Cells[1].Value = reader.GetString(firstNameOrdinal);
+                            row.Cells[2].Value = reader.GetString(lastNameOrdinal);
+
+                            dgvResults.Rows.Add(row);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to search customers with given parameters.");
+                    }
+                }
+                else if (txtCustomerFirst.Text != string.Empty)
+                {
+                    string customerFirst = txtCustomerFirst.Text;
+                    try
+                    {
+                        SqlCommand SearchCustomerViaIDCmd = new SqlCommand(@"ITDB.IT.GetCustomerByFirst", sqlConnection);
+                        SearchCustomerViaIDCmd.CommandType = CommandType.StoredProcedure;
+                        SearchCustomerViaIDCmd.Parameters.AddWithValue("@FirstName", customerFirst);
+
+                        SearchCustomerViaIDCmd.ExecuteNonQuery();
+
+                        var reader = SearchCustomerViaIDCmd.ExecuteReader();
+
+                        var customerIDOrdinal = reader.GetOrdinal("CustomerID");
+                        var firstNameOrdinal = reader.GetOrdinal("FirstName");
+                        var lastNameOrdinal = reader.GetOrdinal("LastName");
+
+                        dgvResults.ColumnCount = 3;
+
+                        dgvResults.Columns[0].Name = "Customer ID";
+                        dgvResults.Columns[1].Name = "First Name";
+                        dgvResults.Columns[2].Name = "Last Name";
+
+                        while (reader.Read())
+                        {
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells[0].Value = reader.GetInt32(customerIDOrdinal);
+                            row.Cells[1].Value = reader.GetString(firstNameOrdinal);
+                            row.Cells[2].Value = reader.GetString(lastNameOrdinal);
+
+                            dgvResults.Rows.Add(row);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to search customers with given parameters.");
+                    }
+                }
+                else if (txtCustomerLast.Text != string.Empty)
+                {
+                    string customerLast = txtCustomerLast.Text;
+                    try
+                    {
+                        SqlCommand SearchCustomerViaIDCmd = new SqlCommand(@"ITDB.IT.GetCustomerByLast", sqlConnection);
+                        SearchCustomerViaIDCmd.CommandType = CommandType.StoredProcedure;
+                        SearchCustomerViaIDCmd.Parameters.AddWithValue("@LastName", customerLast);
+
+                        SearchCustomerViaIDCmd.ExecuteNonQuery();
+
+                        var reader = SearchCustomerViaIDCmd.ExecuteReader();
+
+                        var customerIDOrdinal = reader.GetOrdinal("CustomerID");
+                        var firstNameOrdinal = reader.GetOrdinal("FirstName");
+                        var lastNameOrdinal = reader.GetOrdinal("LastName");
+
+                        dgvResults.ColumnCount = 3;
+
+                        dgvResults.Columns[0].Name = "Customer ID";
+                        dgvResults.Columns[1].Name = "First Name";
+                        dgvResults.Columns[2].Name = "Last Name";
+
+                        while (reader.Read())
+                        {
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells[0].Value = reader.GetInt32(customerIDOrdinal);
+                            row.Cells[1].Value = reader.GetString(firstNameOrdinal);
+                            row.Cells[2].Value = reader.GetString(lastNameOrdinal);
+
+                            dgvResults.Rows.Add(row);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to search customers with given parameters.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a customer ID");
+                }
             }
             else if (radCheckOutDate.Checked)
             {
+                DateTime dt = dtpCheckedOut.Value.Date;
+                try
+                {
+                    SqlCommand SearchCustomerViaIDCmd = new SqlCommand(@"ITDB.IT.GetCCheckedOutOn", sqlConnection);
+                    SearchCustomerViaIDCmd.CommandType = CommandType.StoredProcedure;
+                    SearchCustomerViaIDCmd.Parameters.AddWithValue("@CheckedOutDate", dt);
 
+                    SearchCustomerViaIDCmd.ExecuteNonQuery();
+
+                    var reader = SearchCustomerViaIDCmd.ExecuteReader();
+
+                    var customerIDOrdinal = reader.GetOrdinal("CustomerID");
+                    var firstNameOrdinal = reader.GetOrdinal("FirstName");
+                    var lastNameOrdinal = reader.GetOrdinal("LastName");
+
+                    dgvResults.ColumnCount = 3;
+
+                    dgvResults.Columns[0].Name = "Customer ID";
+                    dgvResults.Columns[1].Name = "First Name";
+                    dgvResults.Columns[2].Name = "Last Name";
+
+                    while (reader.Read())
+                    {
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.Cells.Add(new DataGridViewTextBoxCell());
+                        row.Cells.Add(new DataGridViewTextBoxCell());
+                        row.Cells.Add(new DataGridViewTextBoxCell());
+                        row.Cells[0].Value = reader.GetInt32(customerIDOrdinal);
+                        row.Cells[1].Value = reader.GetString(firstNameOrdinal);
+                        row.Cells[2].Value = reader.GetString(lastNameOrdinal);
+
+                        dgvResults.Rows.Add(row);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unable to search customers with given parameters.");
+                }
             }
             else if (radReturnDate.Checked)
             {
+                DateTime dt = dtpReturnedOn.Value.Date;
+                try
+                {
+                    SqlCommand SearchCustomerViaIDCmd = new SqlCommand(@"ITDB.IT.GetCReturnedOn", sqlConnection);
+                    SearchCustomerViaIDCmd.CommandType = CommandType.StoredProcedure;
+                    SearchCustomerViaIDCmd.Parameters.AddWithValue("@CheckedOutDate", dt);
 
+                    SearchCustomerViaIDCmd.ExecuteNonQuery();
+
+                    var reader = SearchCustomerViaIDCmd.ExecuteReader();
+
+                    var customerIDOrdinal = reader.GetOrdinal("CustomerID");
+                    var firstNameOrdinal = reader.GetOrdinal("FirstName");
+                    var lastNameOrdinal = reader.GetOrdinal("LastName");
+
+                    dgvResults.ColumnCount = 3;
+
+                    dgvResults.Columns[0].Name = "Customer ID";
+                    dgvResults.Columns[1].Name = "First Name";
+                    dgvResults.Columns[2].Name = "Last Name";
+
+                    while (reader.Read())
+                    {
+                        DataGridViewRow row = new DataGridViewRow();
+                        row.Cells.Add(new DataGridViewTextBoxCell());
+                        row.Cells.Add(new DataGridViewTextBoxCell());
+                        row.Cells.Add(new DataGridViewTextBoxCell());
+                        row.Cells[0].Value = reader.GetInt32(customerIDOrdinal);
+                        row.Cells[1].Value = reader.GetString(firstNameOrdinal);
+                        row.Cells[2].Value = reader.GetString(lastNameOrdinal);
+
+                        dgvResults.Rows.Add(row);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unable to search customers with given parameters.");
+                }
             }
             else
             {
-                MessageBox.Show("A choice");
+                MessageBox.Show("A choice must be made in what search conditions are applied.");
             }
         }
     }

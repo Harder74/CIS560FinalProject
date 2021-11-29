@@ -34,14 +34,15 @@ namespace ITCheckoutUI
             this.radCheckOutDate = new System.Windows.Forms.RadioButton();
             this.radSearchName = new System.Windows.Forms.RadioButton();
             this.radSearchID = new System.Windows.Forms.RadioButton();
-            this.lstResults = new System.Windows.Forms.ListBox();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.menuHome = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlSearchConditions1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlSearchConditions2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSearch = new System.Windows.Forms.Button();
+            this.dgvResults = new System.Windows.Forms.DataGridView();
             this.pnlSearchChoices.SuspendLayout();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSearchChoices
@@ -103,15 +104,6 @@ namespace ITCheckoutUI
             this.radSearchID.UseVisualStyleBackColor = true;
             this.radSearchID.CheckedChanged += new System.EventHandler(this.radSearchID_CheckedChanged);
             // 
-            // lstResults
-            // 
-            this.lstResults.FormattingEnabled = true;
-            this.lstResults.Location = new System.Drawing.Point(10, 126);
-            this.lstResults.Name = "lstResults";
-            this.lstResults.ScrollAlwaysVisible = true;
-            this.lstResults.Size = new System.Drawing.Size(776, 225);
-            this.lstResults.TabIndex = 5;
-            // 
             // menuStrip
             // 
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -155,16 +147,24 @@ namespace ITCheckoutUI
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
+            // dgvResults
+            // 
+            this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvResults.Location = new System.Drawing.Point(10, 126);
+            this.dgvResults.Name = "dgvResults";
+            this.dgvResults.Size = new System.Drawing.Size(778, 231);
+            this.dgvResults.TabIndex = 13;
+            // 
             // CustomerSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 369);
+            this.Controls.Add(this.dgvResults);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.pnlSearchConditions2);
             this.Controls.Add(this.pnlSearchConditions1);
             this.Controls.Add(this.pnlSearchChoices);
-            this.Controls.Add(this.lstResults);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "CustomerSearch";
@@ -174,6 +174,7 @@ namespace ITCheckoutUI
             this.pnlSearchChoices.PerformLayout();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,11 +186,11 @@ namespace ITCheckoutUI
         private System.Windows.Forms.RadioButton radCheckOutDate;
         private System.Windows.Forms.RadioButton radSearchName;
         private System.Windows.Forms.RadioButton radSearchID;
-        private System.Windows.Forms.ListBox lstResults;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem menuHome;
         private System.Windows.Forms.FlowLayoutPanel pnlSearchConditions1;
         private System.Windows.Forms.FlowLayoutPanel pnlSearchConditions2;
         private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.DataGridView dgvResults;
     }
 }
