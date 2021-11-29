@@ -106,7 +106,280 @@ namespace ITCheckoutUI
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            if (radSearchID.Checked)
+            {
+                if (txtItemID.Text != string.Empty)
+                {
+                    string itemID = txtItemID.Text;
+                    try
+                    {
+                        SqlCommand SearchItemViaIDCmd = new SqlCommand(@"ITDB.IT.GetItemByID", sqlConnection);
+                        SearchItemViaIDCmd.CommandType = CommandType.StoredProcedure;
+                        SearchItemViaIDCmd.Parameters.AddWithValue("@ItemID", itemID);
 
+                        SearchItemViaIDCmd.ExecuteNonQuery();
+
+                        var reader = SearchItemViaIDCmd.ExecuteReader();
+
+                        var itemIDOrdinal = reader.GetOrdinal("ItemID");
+                        var serialNumberOrdinal = reader.GetOrdinal("SerialNumber");
+                        var itemTypeOrdinal = reader.GetOrdinal("ItemType");
+                        var isCheckedOutOrdinal = reader.GetOrdinal("IsCheckedOut");
+                        var isRemovedOrdinal = reader.GetOrdinal("IsRemoved");
+
+                        dgvResults.ColumnCount = 5;
+
+                        dgvResults.Columns[0].Name = "Item ID";
+                        dgvResults.Columns[1].Name = "Serial Number";
+                        dgvResults.Columns[2].Name = "Item Type";
+                        dgvResults.Columns[2].Name = "IsCheckedOut";
+                        dgvResults.Columns[2].Name = "IsRemoved";
+
+                        while (reader.Read())
+                        {
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells[0].Value = reader.GetInt32(itemIDOrdinal);
+                            row.Cells[1].Value = reader.GetString(serialNumberOrdinal);
+                            row.Cells[2].Value = reader.GetString(itemTypeOrdinal);
+                            row.Cells[3].Value = reader.GetInt32(isCheckedOutOrdinal);
+                            row.Cells[4].Value = reader.GetInt32(isRemovedOrdinal);
+
+                            dgvResults.Rows.Add(row);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to search items with given parameters.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter an item ID");
+                }
+            }
+            else if (radSearchItemName.Checked)
+            {
+                if (txtItemName.Text != string.Empty)
+                {
+                    string itemName = txtItemName.Text;
+                    try
+                    {
+                        SqlCommand SearchItemViaNameCmd = new SqlCommand(@"ITDB.IT.GetItemByItemName", sqlConnection);
+                        SearchItemViaNameCmd.CommandType = CommandType.StoredProcedure;
+                        SearchItemViaNameCmd.Parameters.AddWithValue("@ItemName", itemName);
+
+                        SearchItemViaNameCmd.ExecuteNonQuery();
+
+                        var reader = SearchItemViaNameCmd.ExecuteReader();
+
+                        var itemIDOrdinal = reader.GetOrdinal("ItemID");
+                        var serialNumberOrdinal = reader.GetOrdinal("SerialNumber");
+                        var itemTypeOrdinal = reader.GetOrdinal("ItemType");
+                        var isCheckedOutOrdinal = reader.GetOrdinal("IsCheckedOut");
+                        var isRemovedOrdinal = reader.GetOrdinal("IsRemoved");
+
+                        dgvResults.ColumnCount = 5;
+
+                        dgvResults.Columns[0].Name = "Item ID";
+                        dgvResults.Columns[1].Name = "Serial Number";
+                        dgvResults.Columns[2].Name = "Item Type";
+                        dgvResults.Columns[2].Name = "IsCheckedOut";
+                        dgvResults.Columns[2].Name = "IsRemoved";
+
+                        while (reader.Read())
+                        {
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells[0].Value = reader.GetInt32(itemIDOrdinal);
+                            row.Cells[1].Value = reader.GetString(serialNumberOrdinal);
+                            row.Cells[2].Value = reader.GetString(itemTypeOrdinal);
+                            row.Cells[3].Value = reader.GetInt32(isCheckedOutOrdinal);
+                            row.Cells[4].Value = reader.GetInt32(isRemovedOrdinal);
+
+                            dgvResults.Rows.Add(row);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to search items with given parameters.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter an item name.");
+                }
+            }
+            else if (radSearchSerialNumber.Checked)
+            {
+                if (txtItemSerialNo.Text != string.Empty)
+                {
+                    string itemSerialNo = txtItemSerialNo.Text;
+                    try
+                    {
+                        SqlCommand SearchItemViaSerialNoCmd = new SqlCommand(@"ITDB.IT.GetItemByItemSerialNumber", sqlConnection);
+                        SearchItemViaSerialNoCmd.CommandType = CommandType.StoredProcedure;
+                        SearchItemViaSerialNoCmd.Parameters.AddWithValue("@SerialNumber", itemSerialNo);
+
+                        SearchItemViaSerialNoCmd.ExecuteNonQuery();
+
+                        var reader = SearchItemViaSerialNoCmd.ExecuteReader();
+
+                        var itemIDOrdinal = reader.GetOrdinal("ItemID");
+                        var serialNumberOrdinal = reader.GetOrdinal("SerialNumber");
+                        var itemTypeOrdinal = reader.GetOrdinal("ItemType");
+                        var isCheckedOutOrdinal = reader.GetOrdinal("IsCheckedOut");
+                        var isRemovedOrdinal = reader.GetOrdinal("IsRemoved");
+
+                        dgvResults.ColumnCount = 5;
+
+                        dgvResults.Columns[0].Name = "Item ID";
+                        dgvResults.Columns[1].Name = "Serial Number";
+                        dgvResults.Columns[2].Name = "Item Type";
+                        dgvResults.Columns[2].Name = "IsCheckedOut";
+                        dgvResults.Columns[2].Name = "IsRemoved";
+
+                        while (reader.Read())
+                        {
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells[0].Value = reader.GetInt32(itemIDOrdinal);
+                            row.Cells[1].Value = reader.GetString(serialNumberOrdinal);
+                            row.Cells[2].Value = reader.GetString(itemTypeOrdinal);
+                            row.Cells[3].Value = reader.GetInt32(isCheckedOutOrdinal);
+                            row.Cells[4].Value = reader.GetInt32(isRemovedOrdinal);
+
+                            dgvResults.Rows.Add(row);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to search items with given parameters.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter an item serial number.");
+                }
+            }
+            else if (radSearchItemType.Checked)
+            {
+                if (txtItemType.Text != string.Empty)
+                {
+                    string itemType = txtItemType.Text;
+                    try
+                    {
+                        SqlCommand SearchItemViaTypeCmd = new SqlCommand(@"ITDB.IT.GetItemByItemType", sqlConnection);
+                        SearchItemViaTypeCmd.CommandType = CommandType.StoredProcedure;
+                        SearchItemViaTypeCmd.Parameters.AddWithValue("@ItemType", itemType);
+
+                        SearchItemViaTypeCmd.ExecuteNonQuery();
+
+                        var reader = SearchItemViaTypeCmd.ExecuteReader();
+
+                        var itemIDOrdinal = reader.GetOrdinal("ItemID");
+                        var serialNumberOrdinal = reader.GetOrdinal("SerialNumber");
+                        var itemTypeOrdinal = reader.GetOrdinal("ItemType");
+                        var isCheckedOutOrdinal = reader.GetOrdinal("IsCheckedOut");
+                        var isRemovedOrdinal = reader.GetOrdinal("IsRemoved");
+
+                        dgvResults.ColumnCount = 5;
+
+                        dgvResults.Columns[0].Name = "Item ID";
+                        dgvResults.Columns[1].Name = "Serial Number";
+                        dgvResults.Columns[2].Name = "Item Type";
+                        dgvResults.Columns[2].Name = "IsCheckedOut";
+                        dgvResults.Columns[2].Name = "IsRemoved";
+
+                        while (reader.Read())
+                        {
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells[0].Value = reader.GetInt32(itemIDOrdinal);
+                            row.Cells[1].Value = reader.GetString(serialNumberOrdinal);
+                            row.Cells[2].Value = reader.GetString(itemTypeOrdinal);
+                            row.Cells[3].Value = reader.GetInt32(isCheckedOutOrdinal);
+                            row.Cells[4].Value = reader.GetInt32(isRemovedOrdinal);
+
+                            dgvResults.Rows.Add(row);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to search items with given parameters.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter an item type.");
+                }
+            }
+            else if (radSearchCustomerID.Checked)
+            {
+                if (txtCustomerID.Text != string.Empty)
+                {
+                    string customerID = txtCustomerID.Text;
+                    try
+                    {
+                        SqlCommand SearchItemViaCustomerIDCmd = new SqlCommand(@"ITDB.IT.GetItemsCheckedOutByCID", sqlConnection);
+                        SearchItemViaCustomerIDCmd.CommandType = CommandType.StoredProcedure;
+                        SearchItemViaCustomerIDCmd.Parameters.AddWithValue("@CustomerID", customerID);
+
+                        SearchItemViaCustomerIDCmd.ExecuteNonQuery();
+
+                        var reader = SearchItemViaCustomerIDCmd.ExecuteReader();
+
+                        var itemIDOrdinal = reader.GetOrdinal("ItemID");
+                        var serialNumberOrdinal = reader.GetOrdinal("SerialNumber");
+                        var itemTypeOrdinal = reader.GetOrdinal("ItemType");
+                        var isCheckedOutOrdinal = reader.GetOrdinal("IsCheckedOut");
+                        var isRemovedOrdinal = reader.GetOrdinal("IsRemoved");
+
+                        dgvResults.ColumnCount = 5;
+
+                        dgvResults.Columns[0].Name = "Item ID";
+                        dgvResults.Columns[1].Name = "Serial Number";
+                        dgvResults.Columns[2].Name = "Item Type";
+                        dgvResults.Columns[2].Name = "IsCheckedOut";
+                        dgvResults.Columns[2].Name = "IsRemoved";
+
+                        while (reader.Read())
+                        {
+                            DataGridViewRow row = new DataGridViewRow();
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells.Add(new DataGridViewTextBoxCell());
+                            row.Cells[0].Value = reader.GetInt32(itemIDOrdinal);
+                            row.Cells[1].Value = reader.GetString(serialNumberOrdinal);
+                            row.Cells[2].Value = reader.GetString(itemTypeOrdinal);
+                            row.Cells[3].Value = reader.GetInt32(isCheckedOutOrdinal);
+                            row.Cells[4].Value = reader.GetInt32(isRemovedOrdinal);
+
+                            dgvResults.Rows.Add(row);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Unable to search items with given parameters.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a customer ID.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("A choice must be made in what search conditions are applied.");
+            }
         }
     }
 }
