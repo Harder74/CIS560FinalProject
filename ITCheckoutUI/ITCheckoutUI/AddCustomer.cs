@@ -63,7 +63,7 @@ namespace ITCheckoutUI
                 }
                 catch (SqlException sql)
                 {
-                    MessageBox.Show("Customer Already in Database");
+                    MessageBox.Show(sql.Message);
                 }
                 catch (Exception ex)
                 {

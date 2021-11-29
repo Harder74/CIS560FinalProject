@@ -43,8 +43,7 @@ namespace ITCheckoutUI
 
             tableCreationCmd.ExecuteNonQuery();
             
-            PowerShell ps = PowerShell.Create();
-            ps.AddScript(File.ReadAllText(@"..\..\DB-Schema\BuildProcedures.ps1"), true).Invoke();
+            
 
         }
 
