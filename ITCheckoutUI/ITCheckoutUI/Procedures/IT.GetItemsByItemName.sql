@@ -7,7 +7,7 @@
 
 
 CREATE OR ALTER PROCEDURE IT.GetItemsByItemName
-	@ItemName INT
+	@ItemName NVARCHAR(32)
 AS
 
 SELECT I.ItemName, I.SerialNumber, I.ItemType, I.IsCheckedOut, I.IsRemoved

@@ -299,7 +299,7 @@ ORDER BY R.ReturnedOn;
 GO
 
 CREATE OR ALTER PROCEDURE IT.GetItemsByItemName
-	@ItemName INT
+	@ItemName NVARCHAR(32)
 AS
 
 SELECT I.ItemName, I.SerialNumber, I.ItemType, I.IsCheckedOut, I.IsRemoved
@@ -308,7 +308,7 @@ WHERE I.ItemName = @ItemName;
 GO
 
 CREATE OR ALTER PROCEDURE IT.GetItemsByItemType
-	@ItemType INT
+	@ItemType NVARCHAR(15)
 AS
 
 SELECT I.ItemName, I.SerialNumber, I.ItemType, I.IsCheckedOut, I.IsRemoved
@@ -360,7 +360,7 @@ ORDER BY NumberOfCheckouts DESC;
 GO
 
 CREATE OR ALTER PROCEDURE IT.GetRemovedItems 
-	@IsRemoved BIT
+	@IsRemoved INT
 AS
 
 SELECT I.ItemName, I.SerialNumber, I.ItemType, I.IsCheckedOut, I.IsRemoved
