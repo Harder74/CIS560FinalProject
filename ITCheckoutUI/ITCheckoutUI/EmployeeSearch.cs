@@ -373,5 +373,53 @@ namespace ITCheckoutUI
                 MessageBox.Show("A choice must be made in what search conditions are applied.");
             }
         }
+
+        private void btnMonthlyReports_Click(object sender, EventArgs e)
+        {
+            dgvResults.Rows.Clear();
+            try
+            {
+                SqlCommand SearchMonthlyReports = new SqlCommand(@"ITDB.IT.GetMonthlyReport", sqlConnection);
+                SearchMonthlyReports.CommandType = CommandType.StoredProcedure;
+                SearchMonthlyReports.Parameters.AddWithValue("@Month", 11);
+                SearchMonthlyReports.Parameters.AddWithValue("@Year", 2021);
+
+                SearchMonthlyReports.ExecuteNonQuery();
+
+                var reader = SearchMonthlyReports.ExecuteReader();
+
+                var employeeIDOrdinal = reader.GetOrdinal("EmployeeID");
+                var firstNameOrdinal = reader.GetOrdinal("FirstName");
+                var lastNameOrdinal = reader.GetOrdinal("LastName");
+                var numberOfCheckouts = reader.GetOrdinal("CheckoutAmmount");
+
+                dgvResults.ColumnCount = 4;
+
+                dgvResults.Columns[0].Name = "Employee ID";
+                dgvResults.Columns[1].Name = "First Name";
+                dgvResults.Columns[2].Name = "Last Name";
+                dgvResults.Columns[3].Name = "Number of Checkouts";
+
+                while (reader.Read())
+                {
+                    DataGridViewRow row = new DataGridViewRow();
+                    row.Cells.Add(new DataGridViewTextBoxCell());
+                    row.Cells.Add(new DataGridViewTextBoxCell());
+                    row.Cells.Add(new DataGridViewTextBoxCell());
+                    row.Cells.Add(new DataGridViewTextBoxCell());
+                    row.Cells[0].Value = reader.GetInt32(employeeIDOrdinal);
+                    row.Cells[1].Value = reader.GetString(firstNameOrdinal);
+                    row.Cells[2].Value = reader.GetString(lastNameOrdinal);
+                    row.Cells[3].Value = reader.GetInt32(numberOfCheckouts);
+
+                    dgvResults.Rows.Add(row);
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unable to search items.");
+            }
+        }
     }
 }

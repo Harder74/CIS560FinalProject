@@ -38,7 +38,6 @@ namespace ITCheckoutUI
             this.btnShowItemPopularity = new System.Windows.Forms.Button();
             this.btnShowAvailableItems = new System.Windows.Forms.Button();
             this.btnShowCheckedOutItems = new System.Windows.Forms.Button();
-            this.btnShowRemovedItems = new System.Windows.Forms.Button();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.menuHome = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvResults = new System.Windows.Forms.DataGridView();
@@ -130,33 +129,27 @@ namespace ITCheckoutUI
             this.btnShowItemPopularity.TabIndex = 11;
             this.btnShowItemPopularity.Text = "Show Popularity of Items";
             this.btnShowItemPopularity.UseVisualStyleBackColor = true;
+            this.btnShowItemPopularity.Click += new System.EventHandler(this.btnShowItemPopularity_Click);
             // 
             // btnShowAvailableItems
             // 
-            this.btnShowAvailableItems.Location = new System.Drawing.Point(196, 27);
+            this.btnShowAvailableItems.Location = new System.Drawing.Point(335, 27);
             this.btnShowAvailableItems.Name = "btnShowAvailableItems";
             this.btnShowAvailableItems.Size = new System.Drawing.Size(139, 27);
             this.btnShowAvailableItems.TabIndex = 12;
             this.btnShowAvailableItems.Text = "Show All Available Items";
             this.btnShowAvailableItems.UseVisualStyleBackColor = true;
+            this.btnShowAvailableItems.Click += new System.EventHandler(this.btnShowAvailableItems_Click);
             // 
             // btnShowCheckedOutItems
             // 
-            this.btnShowCheckedOutItems.Location = new System.Drawing.Point(405, 27);
+            this.btnShowCheckedOutItems.Location = new System.Drawing.Point(624, 27);
             this.btnShowCheckedOutItems.Name = "btnShowCheckedOutItems";
             this.btnShowCheckedOutItems.Size = new System.Drawing.Size(164, 27);
             this.btnShowCheckedOutItems.TabIndex = 13;
             this.btnShowCheckedOutItems.Text = "Show All Checked Out Items";
             this.btnShowCheckedOutItems.UseVisualStyleBackColor = true;
-            // 
-            // btnShowRemovedItems
-            // 
-            this.btnShowRemovedItems.Location = new System.Drawing.Point(640, 27);
-            this.btnShowRemovedItems.Name = "btnShowRemovedItems";
-            this.btnShowRemovedItems.Size = new System.Drawing.Size(148, 27);
-            this.btnShowRemovedItems.TabIndex = 15;
-            this.btnShowRemovedItems.Text = "Show All Removed Items";
-            this.btnShowRemovedItems.UseVisualStyleBackColor = true;
+            this.btnShowCheckedOutItems.Click += new System.EventHandler(this.btnShowCheckedOutItems_Click);
             // 
             // menuStrip
             // 
@@ -219,7 +212,6 @@ namespace ITCheckoutUI
             this.Controls.Add(this.pnlSearchConditions1);
             this.Controls.Add(this.dgvResults);
             this.Controls.Add(this.btnShowCheckedOutItems);
-            this.Controls.Add(this.btnShowRemovedItems);
             this.Controls.Add(this.btnShowAvailableItems);
             this.Controls.Add(this.btnShowItemPopularity);
             this.Controls.Add(this.pnlSearchChoices);
@@ -248,7 +240,6 @@ namespace ITCheckoutUI
         private System.Windows.Forms.Button btnShowItemPopularity;
         private System.Windows.Forms.Button btnShowAvailableItems;
         private System.Windows.Forms.Button btnShowCheckedOutItems;
-        private System.Windows.Forms.Button btnShowRemovedItems;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem menuHome;
         private System.Windows.Forms.DataGridView dgvResults;
