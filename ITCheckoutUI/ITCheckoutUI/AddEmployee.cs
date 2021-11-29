@@ -35,27 +35,36 @@ namespace ITCheckoutUI
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            string first = txtFirstName.Text;
-            string last = txtLastName.Text;
-            try
+            if (txtFirstName.Text != string.Empty && txtLastName.Text != string.Empty)
             {
-                SqlCommand AddEmployeeCmd = new SqlCommand(@"ITDB.IT.AddEmployee", sqlConnection);
-                AddEmployeeCmd.CommandType = CommandType.StoredProcedure;
-                AddEmployeeCmd.Parameters.AddWithValue("@FirstName", first);
-                AddEmployeeCmd.Parameters.AddWithValue("@LastName", last);
-                AddEmployeeCmd.Parameters.AddWithValue("@EmployeeID", 0);
+                string first = txtFirstName.Text;
+                string last = txtLastName.Text;
+                try
+                {
+                    SqlCommand AddEmployeeCmd = new SqlCommand(@"ITDB.IT.AddEmployee", sqlConnection);
+                    AddEmployeeCmd.CommandType = CommandType.StoredProcedure;
+                    AddEmployeeCmd.Parameters.AddWithValue("@FirstName", first);
+                    AddEmployeeCmd.Parameters.AddWithValue("@LastName", last);
+                    AddEmployeeCmd.Parameters.AddWithValue("@EmployeeID", 0);
 
-                AddEmployeeCmd.ExecuteNonQuery();
+                    AddEmployeeCmd.ExecuteNonQuery();
 
-                MessageBox.Show("Employee added successfully!");
+                    MessageBox.Show("Employee added successfully!");
+                    parent.ReturnToLanding(this);
+                    this.Close();
+                }
+                catch (SqlException sql)
+                {
+                    MessageBox.Show("Employee already exists");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unable to add Employee");
+                }
             }
-            catch(SqlException sql)
+            else
             {
-                MessageBox.Show("Employee already exists");
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Unable to add Employee");
+                MessageBox.Show("All fields must be filled in to add employee.");
             }
         }
     }
