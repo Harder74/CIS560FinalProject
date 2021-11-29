@@ -13,5 +13,5 @@ AS
 SELECT C.CustomerID, C.FirstName, C.LastName
 FROM IT.Customers C
 	INNER JOIN IT.[Returns] R on R.CustomerID = C.CustomerID
-WHERE R.ReturnedOn = @ReturnedDate
+WHERE DATEDIFF(DAY, R.ReturnedOn, @ReturnedDate) = 0
 GROUP BY C.CustomerID, C.FirstName, C.LastName;

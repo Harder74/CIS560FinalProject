@@ -13,5 +13,5 @@ AS
 SELECT C.CustomerID, C.FirstName, C.LastName
 FROM IT.Customers C
 	INNER JOIN IT.CheckOuts CO on CO.EmployeeID = C.CustomerID
-WHERE CO.CheckedOutOn = @CheckedOutDate
+WHERE DATEDIFF(DAY, CO.CheckedOutOn, @CheckedOutDate) = 0
 GROUP BY C.CustomerID, C.FirstName, C.LastName;
