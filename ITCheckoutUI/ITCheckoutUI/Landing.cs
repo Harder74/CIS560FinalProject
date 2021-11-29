@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Management.Automation;
 
 namespace ITCheckoutUI
 {
@@ -42,6 +43,9 @@ namespace ITCheckoutUI
 
             tableCreationCmd.ExecuteNonQuery();
             
+            PowerShell ps = PowerShell.Create();
+            ps.AddScript(File.ReadAllText(@"..\..\DB-Schema\BuildProcedures.ps1"), true).Invoke();
+
         }
 
         public void ReturnToLanding(Form child)
