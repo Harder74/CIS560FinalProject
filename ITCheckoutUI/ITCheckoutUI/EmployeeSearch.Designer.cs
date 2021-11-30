@@ -40,7 +40,7 @@ namespace ITCheckoutUI
             this.pnlSearchConditions1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pnlSearchConditions2 = new System.Windows.Forms.FlowLayoutPanel();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnMonthlyReports = new System.Windows.Forms.Button();
+            this.radShowReports = new System.Windows.Forms.RadioButton();
             this.pnlSearchChoices.SuspendLayout();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
@@ -48,13 +48,14 @@ namespace ITCheckoutUI
             // 
             // pnlSearchChoices
             // 
+            this.pnlSearchChoices.Controls.Add(this.radShowReports);
             this.pnlSearchChoices.Controls.Add(this.radSearchReturnDate);
             this.pnlSearchChoices.Controls.Add(this.radSearchCheckOutDate);
             this.pnlSearchChoices.Controls.Add(this.radSearchName);
             this.pnlSearchChoices.Controls.Add(this.radSearchID);
-            this.pnlSearchChoices.Location = new System.Drawing.Point(10, 64);
+            this.pnlSearchChoices.Location = new System.Drawing.Point(10, 31);
             this.pnlSearchChoices.Name = "pnlSearchChoices";
-            this.pnlSearchChoices.Size = new System.Drawing.Size(153, 93);
+            this.pnlSearchChoices.Size = new System.Drawing.Size(153, 115);
             this.pnlSearchChoices.TabIndex = 3;
             // 
             // radSearchReturnDate
@@ -127,28 +128,28 @@ namespace ITCheckoutUI
             // dgvResults
             // 
             this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResults.Location = new System.Drawing.Point(10, 163);
+            this.dgvResults.Location = new System.Drawing.Point(10, 152);
             this.dgvResults.Name = "dgvResults";
             this.dgvResults.Size = new System.Drawing.Size(776, 231);
             this.dgvResults.TabIndex = 6;
             // 
             // pnlSearchConditions1
             // 
-            this.pnlSearchConditions1.Location = new System.Drawing.Point(170, 64);
+            this.pnlSearchConditions1.Location = new System.Drawing.Point(170, 31);
             this.pnlSearchConditions1.Name = "pnlSearchConditions1";
-            this.pnlSearchConditions1.Size = new System.Drawing.Size(121, 93);
+            this.pnlSearchConditions1.Size = new System.Drawing.Size(121, 115);
             this.pnlSearchConditions1.TabIndex = 11;
             // 
             // pnlSearchConditions2
             // 
-            this.pnlSearchConditions2.Location = new System.Drawing.Point(297, 64);
+            this.pnlSearchConditions2.Location = new System.Drawing.Point(297, 31);
             this.pnlSearchConditions2.Name = "pnlSearchConditions2";
-            this.pnlSearchConditions2.Size = new System.Drawing.Size(244, 93);
+            this.pnlSearchConditions2.Size = new System.Drawing.Size(244, 115);
             this.pnlSearchConditions2.TabIndex = 12;
             // 
             // btnSearch
             // 
-            this.btnSearch.Location = new System.Drawing.Point(635, 98);
+            this.btnSearch.Location = new System.Drawing.Point(628, 72);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(99, 32);
             this.btnSearch.TabIndex = 13;
@@ -156,22 +157,23 @@ namespace ITCheckoutUI
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnMonthlyReports
+            // radShowReports
             // 
-            this.btnMonthlyReports.Location = new System.Drawing.Point(321, 27);
-            this.btnMonthlyReports.Name = "btnMonthlyReports";
-            this.btnMonthlyReports.Size = new System.Drawing.Size(177, 33);
-            this.btnMonthlyReports.TabIndex = 14;
-            this.btnMonthlyReports.Text = "Show Employee Monthly Reports";
-            this.btnMonthlyReports.UseVisualStyleBackColor = true;
-            this.btnMonthlyReports.Click += new System.EventHandler(this.btnMonthlyReports_Click);
+            this.radShowReports.AutoSize = true;
+            this.radShowReports.Location = new System.Drawing.Point(3, 95);
+            this.radShowReports.Name = "radShowReports";
+            this.radShowReports.Size = new System.Drawing.Size(132, 17);
+            this.radShowReports.TabIndex = 6;
+            this.radShowReports.TabStop = true;
+            this.radShowReports.Text = "Show Monthly Reports";
+            this.radShowReports.UseVisualStyleBackColor = true;
+            this.radShowReports.CheckedChanged += new System.EventHandler(this.radShowReports_CheckedChanged);
             // 
             // EmployeeSearch
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 403);
-            this.Controls.Add(this.btnMonthlyReports);
+            this.ClientSize = new System.Drawing.Size(800, 392);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.pnlSearchConditions2);
             this.Controls.Add(this.pnlSearchConditions1);
@@ -205,6 +207,6 @@ namespace ITCheckoutUI
         private System.Windows.Forms.FlowLayoutPanel pnlSearchConditions1;
         private System.Windows.Forms.FlowLayoutPanel pnlSearchConditions2;
         private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.Button btnMonthlyReports;
+        private System.Windows.Forms.RadioButton radShowReports;
     }
 }
