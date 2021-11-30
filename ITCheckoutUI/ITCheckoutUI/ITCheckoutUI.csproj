@@ -153,6 +153,13 @@
       <DependentUpon>ReturnItem.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="bin\Debug\ITCheckoutUI.exe.config" />
+    <None Include="MockData\MockCheckOuts.csv" />
+    <None Include="MockData\MockCheckOuts2.csv" />
+    <None Include="MockData\MockCustomers.csv" />
+    <None Include="MockData\MockEmployees.csv" />
+    <None Include="MockData\MockItems2.csv" />
+    <None Include="MockData\MockReturns.csv" />
+    <None Include="MockData\MockReturns2.csv" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -179,6 +186,7 @@
     <Content Include="Procedures\IT.AddEmployee.sql" />
     <Content Include="Procedures\IT.AddItem.sql" />
     <Content Include="Procedures\IT.AddReturn.sql" />
+    <Content Include="Procedures\IT.CheckOutsNotReturned.sql" />
     <Content Include="Procedures\IT.GetAvailableItems.sql" />
     <Content Include="Procedures\IT.GetCCheckedOutOn.sql" />
     <Content Include="Procedures\IT.GetCReturnedOn.sql" />
@@ -196,6 +204,7 @@
     <Content Include="Procedures\IT.GetEmployeeCheckOuts.sql" />
     <Content Include="Procedures\IT.GetEmployeeReturns.sql" />
     <Content Include="Procedures\IT.GetEReturnedOn.sql" />
+    <Content Include="Procedures\IT.GetICheckedOutOn.sql" />
     <Content Include="Procedures\IT.GetItemByID.sql" />
     <Content Include="Procedures\IT.GetItemBySerialNumber.sql" />
     <Content Include="Procedures\IT.GetItemCheckOuts.sql" />
@@ -208,6 +217,8 @@
     <Content Include="Procedures\IT.GetPopOfItems.sql" />
     <Content Include="Procedures\IT.GetRemovedItems.sql" />
     <Content Include="Procedures\IT.ItemCheckedOut.sql" />
+    <Content Include="Procedures\IT.ItemIsRemoved.sql" />
+    <Content Include="Procedures\IT.ItemReturned.sql" />
     <Content Include="Tables\DropTables.sql" />
     <Content Include="Tables\TableCreationQuery.sql" />
   </ItemGroup>
