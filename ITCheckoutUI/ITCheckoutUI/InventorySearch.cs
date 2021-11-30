@@ -533,7 +533,7 @@ namespace ITCheckoutUI
                     row.Cells[0].Value = reader.GetString(itemNameOrdinal);
                     row.Cells[1].Value = reader.GetString(serialNumberOrdinal);
                     row.Cells[2].Value = reader.GetString(itemTypeOrdinal);
-                    row.Cells[3].Value = reader.GetBoolean(isRemovedOrdinal);
+                    row.Cells[3].Value = reader.GetBoolean(isCheckedOutOrdinal);
                     row.Cells[4].Value = reader.GetBoolean(isRemovedOrdinal);
 
                     dgvResults.Rows.Add(row);
