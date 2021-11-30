@@ -6,7 +6,7 @@
  ****************************/
 
 CREATE OR ALTER PROCEDURE IT.ItemReturned
-	@ItemID INT
+	@ReturnedID INT
 AS
 
 UPDATE IT.Inventory 
@@ -15,5 +15,6 @@ WHERE ItemID =
 (
 	SELECT CO.ItemID
 	FROM IT.CheckOuts CO
-	WHERE CO.ItemID = @ItemID
+		INNER JOIN IT.[Returns] R ON R.CheckedOutID = CO.CheckOutID
+	WHERE R.ReturnID = @ReturnedID
 )

@@ -50,12 +50,6 @@ namespace ITCheckoutUI
 
                     AddCheckoutCmd.ExecuteNonQuery();
 
-                    SqlCommand ChangeCheckoutStatusCmd = new SqlCommand(@"IT.ItemReturned", sqlConnection);
-                    ChangeCheckoutStatusCmd.CommandType = CommandType.StoredProcedure;
-                    ChangeCheckoutStatusCmd.Parameters.AddWithValue("ItemID", returnID);
-
-                    ChangeCheckoutStatusCmd.ExecuteNonQuery();
-
                     MessageBox.Show("Return created successfully!");
                     parent.ReturnToLanding(this);
                     this.Close();
