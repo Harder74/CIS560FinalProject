@@ -48,11 +48,18 @@ namespace ITCheckoutUI
                     AddCheckoutCmd.Parameters.AddWithValue("@ItemID", itemID);
                     AddCheckoutCmd.Parameters.AddWithValue("@EmployeeID", employeeID);
                     AddCheckoutCmd.Parameters.AddWithValue("@CustomerID", customerID);
-                    AddCheckoutCmd.Parameters.AddWithValue("@CheckoutID", checkOutID);
+                    var p = AddCheckoutCmd.Parameters.Add("@CheckoutID", SqlDbType.Int);
+                    p.Direction = ParameterDirection.Output;
 
                     AddCheckoutCmd.ExecuteNonQuery();
 
-                    MessageBox.Show("Checkout created successfully!");
+                    SqlCommand ChangeCheckoutStatusCmd = new SqlCommand(@"ITDB.IT.ItemCheckedOut", sqlConnection);
+                    ChangeCheckoutStatusCmd.CommandType = CommandType.StoredProcedure;
+                    ChangeCheckoutStatusCmd.Parameters.AddWithValue("@ItemID", itemID);
+
+                    ChangeCheckoutStatusCmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Your checkout ID is " + AddCheckoutCmd.Parameters["@CheckoutId"].Value.ToString());
                     parent.ReturnToLanding(this);
                     this.Close();
                 }

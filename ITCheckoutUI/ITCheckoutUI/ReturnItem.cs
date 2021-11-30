@@ -46,9 +46,16 @@ namespace ITCheckoutUI
                     AddCheckoutCmd.CommandType = CommandType.StoredProcedure;
                     AddCheckoutCmd.Parameters.AddWithValue("@CheckoutID", checkoutID);
                     AddCheckoutCmd.Parameters.AddWithValue("@EmployeeID", employeeID);
-                    AddCheckoutCmd.Parameters.AddWithValue("@ReturnID", returnID);
+                    var p = AddCheckoutCmd.Parameters.Add("@ReturnID", SqlDbType.Int);
+                    p.Direction = ParameterDirection.Output;
 
                     AddCheckoutCmd.ExecuteNonQuery();
+
+                    SqlCommand ChangeCheckoutStatusCmd = new SqlCommand(@"ITDB.IT.ItemReturned", sqlConnection);
+                    ChangeCheckoutStatusCmd.CommandType = CommandType.StoredProcedure;
+                    ChangeCheckoutStatusCmd.Parameters.AddWithValue("@ReturnedID", AddCheckoutCmd.Parameters["@ReturnId"].Value);
+
+                    ChangeCheckoutStatusCmd.ExecuteNonQuery();
 
                     MessageBox.Show("Return created successfully!");
                     parent.ReturnToLanding(this);
