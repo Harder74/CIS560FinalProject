@@ -451,7 +451,7 @@ namespace ITCheckoutUI
             {
                 SqlCommand SearchItemViaCustomerIDCmd = new SqlCommand(@"ITDB.IT.GetItemsByCheckedOut", sqlConnection);
                 SearchItemViaCustomerIDCmd.CommandType = CommandType.StoredProcedure;
-                SearchItemViaCustomerIDCmd.Parameters.AddWithValue("@IsCheckedOut", 1);
+                SearchItemViaCustomerIDCmd.Parameters.AddWithValue("@IsCheckedOut", 0);
 
                 SearchItemViaCustomerIDCmd.ExecuteNonQuery();
 
@@ -502,7 +502,7 @@ namespace ITCheckoutUI
             {
                 SqlCommand SearchItemViaCustomerIDCmd = new SqlCommand(@"ITDB.IT.GetItemsByCheckedOut", sqlConnection);
                 SearchItemViaCustomerIDCmd.CommandType = CommandType.StoredProcedure;
-                SearchItemViaCustomerIDCmd.Parameters.AddWithValue("@IsCheckedOut", 0);
+                SearchItemViaCustomerIDCmd.Parameters.AddWithValue("@IsCheckedOut", 1);
 
                 SearchItemViaCustomerIDCmd.ExecuteNonQuery();
 
