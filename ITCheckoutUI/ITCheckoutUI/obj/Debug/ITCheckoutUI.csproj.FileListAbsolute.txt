@@ -14,9 +14,6 @@ D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\I
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.LogInScreen.resources
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.Properties.Resources.resources
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.ReturnItem.resources
-D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.ViewCustomer.resources
-D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.ViewEmployee.resources
-D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.ViewInventoryItem.resources
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.csproj.GenerateResource.cache
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.csproj.CoreCompileInputs.cache
 D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\obj\Debug\ITCheckoutUI.exe

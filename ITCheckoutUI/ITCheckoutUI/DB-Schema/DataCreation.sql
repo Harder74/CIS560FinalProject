@@ -40,7 +40,7 @@ WITH
 GO
 
 BULK INSERT IT.CheckOuts
-FROM 'D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\MockData\MockCheckOuts.csv'
+FROM 'D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\MockData\MockCheckOuts2.csv'
 WITH
 (
 	CHECK_CONSTRAINTS, 
@@ -52,7 +52,7 @@ WITH
 GO
 
 BULK INSERT IT.[Returns]
-FROM 'D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\MockData\MockReturns.csv'
+FROM 'D:\K-State\CIS560\Final\CIS560FinalProject\ITCheckoutUI\ITCheckoutUI\MockData\MockReturns2.csv'
 WITH
 (
     FIRSTROW = 2, -- as 1st one is header
