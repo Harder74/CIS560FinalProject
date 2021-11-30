@@ -217,7 +217,10 @@
     <Content Include="Procedures\IT.GetPopOfItems.sql" />
     <Content Include="Procedures\IT.GetRemovedItems.sql" />
     <Content Include="Procedures\IT.ItemCheckedOut.sql" />
+<<<<<<< HEAD
     <Content Include="Procedures\IT.ItemIsRemoved.sql" />
+=======
+>>>>>>> b1f152f318f4068a9609bc731c262cd4bd262688
     <Content Include="Procedures\IT.ItemReturned.sql" />
     <Content Include="Tables\DropTables.sql" />
     <Content Include="Tables\TableCreationQuery.sql" />

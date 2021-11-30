@@ -23,6 +23,10 @@ namespace ITCheckoutUI
         DateTimePicker dtpCheckedOut = new DateTimePicker();
         DateTimePicker dtpReturnedOn = new DateTimePicker();
         Label lblReturnedOn = new Label();
+        TextBox txtMonth = new TextBox();
+        TextBox txtYear = new TextBox();
+        Label lblMonth = new Label();
+        Label lblYear = new Label();
 
         Landing parent;
         SqlConnection sqlConnection;
@@ -95,6 +99,23 @@ namespace ITCheckoutUI
             lblReturnedOn.Height = 30;
             pnlSearchConditions2.Controls.Add(dtpReturnedOn);
             pnlSearchConditions1.Controls.Add(lblReturnedOn);
+        }
+
+        private void radShowReports_CheckedChanged(object sender, EventArgs e)
+        {
+            pnlSearchConditions1.Controls.Clear();
+            pnlSearchConditions2.Controls.Clear();
+            txtMonth.Clear();
+            txtYear.Clear();
+            pnlSearchConditions2.Width = 150;
+            lblMonth.Text = "Month:";
+            lblYear.Text = "Year:";
+            lblMonth.Height = 30;
+            lblYear.Height = 30;
+            pnlSearchConditions2.Controls.Add(txtMonth);
+            pnlSearchConditions1.Controls.Add(lblMonth);
+            pnlSearchConditions2.Controls.Add(txtYear);
+            pnlSearchConditions1.Controls.Add(lblYear);
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -368,6 +389,74 @@ namespace ITCheckoutUI
                     MessageBox.Show("Unable to search employees with given parameters.");
                 }
             }
+            else if (radShowReports.Checked)
+            {
+                if (txtYear.Text != string.Empty && txtMonth.Text != string.Empty && txtYear.Text.All(char.IsDigit) && txtMonth.Text.All(char.IsDigit))
+                {
+                    if (Int32.Parse(txtYear.Text) > DateTime.Now.Year || Int32.Parse(txtMonth.Text) > 12 || Int32.Parse(txtMonth.Text) < 0)
+                    {
+                        MessageBox.Show("Please select a valid month and year.");
+                    }
+                    else if (Int32.Parse(txtYear.Text) == DateTime.Now.Year && Int32.Parse(txtMonth.Text) > DateTime.Now.Month)
+                    {
+                        MessageBox.Show("Please select a valid month and year.");
+                    }
+                    else
+                    {
+                        dgvResults.Rows.Clear();
+                        int month = Int32.Parse(txtMonth.Text);
+                        int year = Int32.Parse(txtYear.Text);
+                        try
+                        {
+                            SqlCommand SearchMonthlyReports = new SqlCommand(@"ITDB.IT.GetMonthlyReport", sqlConnection);
+                            SearchMonthlyReports.CommandType = CommandType.StoredProcedure;
+                            SearchMonthlyReports.Parameters.AddWithValue("@Month", month);
+                            SearchMonthlyReports.Parameters.AddWithValue("@Year", year);
+
+                            SearchMonthlyReports.ExecuteNonQuery();
+
+                            var reader = SearchMonthlyReports.ExecuteReader();
+
+                            var employeeIDOrdinal = reader.GetOrdinal("EmployeeID");
+                            var firstNameOrdinal = reader.GetOrdinal("FirstName");
+                            var lastNameOrdinal = reader.GetOrdinal("LastName");
+                            var numberOfCheckouts = reader.GetOrdinal("CheckoutAmmount");
+
+                            dgvResults.ColumnCount = 4;
+
+                            dgvResults.Columns[0].Name = "Employee ID";
+                            dgvResults.Columns[1].Name = "First Name";
+                            dgvResults.Columns[2].Name = "Last Name";
+                            dgvResults.Columns[3].Name = "Number of Checkouts";
+
+                            while (reader.Read())
+                            {
+                                DataGridViewRow row = new DataGridViewRow();
+                                row.Cells.Add(new DataGridViewTextBoxCell());
+                                row.Cells.Add(new DataGridViewTextBoxCell());
+                                row.Cells.Add(new DataGridViewTextBoxCell());
+                                row.Cells.Add(new DataGridViewTextBoxCell());
+                                row.Cells[0].Value = reader.GetInt32(employeeIDOrdinal);
+                                row.Cells[1].Value = reader.GetString(firstNameOrdinal);
+                                row.Cells[2].Value = reader.GetString(lastNameOrdinal);
+                                row.Cells[3].Value = reader.GetInt32(numberOfCheckouts);
+
+                                dgvResults.Rows.Add(row);
+                            }
+                            reader.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Unable to search items.");
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please enter numeric values into the month and year fields.");
+                }
+                
+            }
             else
             {
                 MessageBox.Show("A choice must be made in what search conditions are applied.");
@@ -376,50 +465,7 @@ namespace ITCheckoutUI
 
         private void btnMonthlyReports_Click(object sender, EventArgs e)
         {
-            dgvResults.Rows.Clear();
-            try
-            {
-                SqlCommand SearchMonthlyReports = new SqlCommand(@"ITDB.IT.GetMonthlyReport", sqlConnection);
-                SearchMonthlyReports.CommandType = CommandType.StoredProcedure;
-                SearchMonthlyReports.Parameters.AddWithValue("@Month", 11);
-                SearchMonthlyReports.Parameters.AddWithValue("@Year", 2021);
-
-                SearchMonthlyReports.ExecuteNonQuery();
-
-                var reader = SearchMonthlyReports.ExecuteReader();
-
-                var employeeIDOrdinal = reader.GetOrdinal("EmployeeID");
-                var firstNameOrdinal = reader.GetOrdinal("FirstName");
-                var lastNameOrdinal = reader.GetOrdinal("LastName");
-                var numberOfCheckouts = reader.GetOrdinal("CheckoutAmmount");
-
-                dgvResults.ColumnCount = 4;
-
-                dgvResults.Columns[0].Name = "Employee ID";
-                dgvResults.Columns[1].Name = "First Name";
-                dgvResults.Columns[2].Name = "Last Name";
-                dgvResults.Columns[3].Name = "Number of Checkouts";
-
-                while (reader.Read())
-                {
-                    DataGridViewRow row = new DataGridViewRow();
-                    row.Cells.Add(new DataGridViewTextBoxCell());
-                    row.Cells.Add(new DataGridViewTextBoxCell());
-                    row.Cells.Add(new DataGridViewTextBoxCell());
-                    row.Cells.Add(new DataGridViewTextBoxCell());
-                    row.Cells[0].Value = reader.GetInt32(employeeIDOrdinal);
-                    row.Cells[1].Value = reader.GetString(firstNameOrdinal);
-                    row.Cells[2].Value = reader.GetString(lastNameOrdinal);
-                    row.Cells[3].Value = reader.GetInt32(numberOfCheckouts);
-
-                    dgvResults.Rows.Add(row);
-                }
-                reader.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unable to search items.");
-            }
+            
         }
     }
 }
