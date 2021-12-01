@@ -354,7 +354,7 @@ namespace ITCheckoutUI
                 {
                     SqlCommand SearchEmployeeViaIDCmd = new SqlCommand(@"ITDB.IT.GetEReturnedOn", sqlConnection);
                     SearchEmployeeViaIDCmd.CommandType = CommandType.StoredProcedure;
-                    SearchEmployeeViaIDCmd.Parameters.AddWithValue("@CheckedOutDate", dt);
+                    SearchEmployeeViaIDCmd.Parameters.AddWithValue("@ReturnedDate", dt);
 
                     SearchEmployeeViaIDCmd.ExecuteNonQuery();
 
@@ -386,7 +386,7 @@ namespace ITCheckoutUI
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Unable to search employees with given parameters.");
+                    MessageBox.Show(ex.Message);
                 }
             }
             else if (radShowReports.Checked)

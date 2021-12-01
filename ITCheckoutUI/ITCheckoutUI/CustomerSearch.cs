@@ -335,7 +335,7 @@ namespace ITCheckoutUI
                 {
                     SqlCommand SearchCustomerViaIDCmd = new SqlCommand(@"ITDB.IT.GetCReturnedOn", sqlConnection);
                     SearchCustomerViaIDCmd.CommandType = CommandType.StoredProcedure;
-                    SearchCustomerViaIDCmd.Parameters.AddWithValue("@CheckedOutDate", dt);
+                    SearchCustomerViaIDCmd.Parameters.AddWithValue("@ReturnedDate", dt);
 
                     SearchCustomerViaIDCmd.ExecuteNonQuery();
 
